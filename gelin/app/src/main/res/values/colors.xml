@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="darkgreen">#FF1A8300</color>
+    <color name="brightgreen">#8BD878</color>
+    <color name="mediumgrey">#D9D9D9</color>
+    <color name="brightgray">#A2A2A2</color>
+    <color name="darkgray">#626262</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!--Weitere Farben Einkaufsliste-->
+    <color name="pastelgreen">#BEFFC9</color>
+    <color name="pastellyello">#FEFFBE</color>
+    <color name="pastellred">#FFBEBE</color>
+    <color name="pastellorange">#FFE27A</color>
+    <color name="pastellblau">#80DEEA</color>
+
+</resources>
