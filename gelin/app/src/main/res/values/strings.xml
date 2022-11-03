@@ -1,3 +1,71 @@
 <resources>
     <string name="app_name">gelin</string>
+
+    <!--Lebensmittelgruppen und Sachen aus dem Supermarkt-->
+    <string name="einkaufsliste">Einkaufsliste</string>
+    <string name="meinProfil">Mein Profil</string>
+    <string name="einstellungen">Einstellungen</string>
+    <string name="datenschutzhinweise">Datenschutzhinweise</string>
+    <string name="rechtlicheInformation">Rechtliche Information</string>
+
+    <!--Lebensmittelgruppen und Sachen aus dem Supermarkt-->
+    <string name="budget">Budget</string>
+    <string name="lebensmittelHinzufuegen">Lebensmittel hinzufügen</string>
+    <string name="obstUndGemuese">Obst und Gemüse</string>
+    <string name="milcherprodukte">Milchprodukte</string>
+    <string name="fleischprodukte">Fleischprodukte</string>
+    <string name="nudelUndPasta">Nudel und Pasta</string>
+    <string name="brotUndBackwaren">Brot und Backwaren</string>
+    <string name="tiefkuehlware">Tiefkühlware</string>
+    <string name="naschereinen">Naschereinen</string>
+    <string name="tierfutter">Tierfutter</string>
+    <string name="kosmetik">Kosmetik</string>
+    <string name="reinigungsmittel">Reinigungsmittel</string>
+    <string name="soucen">Soucen</string>
+    <string name="interationaleKost">Interationale Kost</string>
+    <string name="getraenke">Getränke</string>
+
+    <!--Produkt hinzufügen-->
+    <string name="marke">Marke</string>
+    <string name="anzahl">Anzahl</string>
+    <string name="einheit">Einheit</string>
+    <string name="produkthinzufuegen">Produkt hinzufügen</string>
+    <string name="mililiter">Mililiter</string>
+    <string name="liter">Liter</string>
+    <string name="gramm">Gramm</string>
+    <string name="kilogramm">Kilogramm</string>
+    <string name="stueck">Stück</string>
+    <string name="dosePackung">Dose/ Packung</string>
+    <string name="beutelSack">Beutel oder Sack</string>
+    <string name="flaschen">Flaschen</string>
+    <string name="barcodeEinscannen">Bitte Scannen Sie das Produkt ab</string>
+
+
+    <!--Registrierung und Login-->
+    <string name="login">Login</string>
+    <string name="registrierung">Registrierung</string>
+    <string name="registrieren">Registrieren</string>
+    <string name="usernamee">Username</string>
+    <string name="passwort">Passwort</string>
+    <string name="passwortBestaetigen">Passwort bestätigen</string>
+    <string name="passwortVergessen">Passwort vergessen?</string>
+
+    <!--Angebot der Woche-->
+    <string name="angebotDerWoche">Angebot der Woche</string>
+
+    <!--Wo ist der nächste Supermarkt-->
+    <string name="woIstDerNächsteSupermarkt">Wo ist der nächste Supermarkt</string>
+
+    <!--Profil-->
+    <string name="profil">Profil</string>
+    <string name="name">Name</string>
+    <string name="email">E-Mail</string>
+    <string name="Zugriffsrechte">Zugriffsrechte</string>
+    <string name="preferierteSupermaerkte">Preferierte Supermärkte</string>
+    <string name="favorisierteSupermaerkte">Favorisierte Supermarkt</string>
+    <string name="sekundaerpreferierteSupermaerkte">Sekundär Preferiete Supermärkt</string>
+    <string name="volleRechte">volle Schreib- und Leserechte</string>
+    <string name="BenutzerdefinierteRechte">Benutzerdefinierte Rechte</string>
+    <string name="nurLeserechte">nur Leserechte</string>
+
 </resources>
