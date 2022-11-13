@@ -1,0 +1,7 @@
+<resources>
+
+    <style name="Widget.Theme.Gelin.MyView" parent="">
+        <item name="android:background">@color/brightgreen</item>
+        <item name="exampleColor">@color/darkgreen</item>
+    </style>
+</resources>

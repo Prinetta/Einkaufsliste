@@ -1,5 +1,15 @@
 <resources>
-    <string name="app_name">gelin</string>
+    <string name="app_name">Gelin</string>
+
+    <!--Lebensmittelgruppen und Sachen aus dem Supermarkt-->
+    <string name="geheZurEinkaufsliste">Gehe zur Einkaufsliste</string>
+    <string name="angebote">Angebote</string>
+    <string name="geheZuAngebote">Gehe zu Angebote</string>
+    <string name="geheZuWoIstDerNächsteSupermarkt">Gehe zur Wo ist der nächste Supermarkt?</string>
+    <string name="haushaltsbuch">Haushaltsbuch</string>
+    <string name="geheZuhaushaltsbuch">Gehe zu Haushaltsbuch</string>
+    <string name="geheZuMeinProfil">Gehe zu Mein Profil</string>
+    <string name="geheZuEinstellungen">Gehe zu Einstellungen</string>
 
     <!--Lebensmittelgruppen und Sachen aus dem Supermarkt-->
     <string name="einkaufsliste">Einkaufsliste</string>
@@ -43,6 +53,7 @@
 
     <!--Registrierung und Login-->
     <string name="login">Login</string>
+    <string name="begrueßungsTextLogin">Logge dich ein um alle Funktionen der App zu nutzen</string>
     <string name="registrierung">Registrierung</string>
     <string name="registrieren">Registrieren</string>
     <string name="usernamee">Username</string>
@@ -67,5 +78,9 @@
     <string name="volleRechte">volle Schreib- und Leserechte</string>
     <string name="BenutzerdefinierteRechte">Benutzerdefinierte Rechte</string>
     <string name="nurLeserechte">nur Leserechte</string>
+    <string name="title_activity_login">Login</string>
+    <string name="title_activity_app_bar">AppBar</string>
+    <string name="title_activity_topbar">Topbar</string>
+    <string name="title_activity_registrierung">Registrierung</string>
 
 </resources>

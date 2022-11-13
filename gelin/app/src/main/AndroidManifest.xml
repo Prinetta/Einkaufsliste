@@ -12,6 +12,43 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Gelin"
         tools:targetApi="31">
+        <activity
+            android:name=".Registrierung"
+            android:exported="false"
+            android:label="@string/title_activity_registrierung"
+            android:theme="@style/Theme.Gelin">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Login"
+            android:exported="false"
+            android:label="@string/title_activity_login"
+            android:theme="@style/Theme.Gelin">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".view.Topbar"
+            android:exported="false"
+            android:label="@string/title_activity_topbar"
+            android:theme="@style/Theme.Gelin">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".AppBar"
+            android:exported="false"
+            android:label="@string/title_activity_app_bar"
+            android:theme="@style/Theme.Gelin">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+
         <meta-data
             android:name="com.google.android.actions"
             android:resource="@drawable/background_green" />
