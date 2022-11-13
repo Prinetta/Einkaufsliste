@@ -16,8 +16,6 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.BlendMode.Companion.Color
-import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
@@ -32,8 +30,10 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import de.mocows.gelin.Login
 import de.mocows.gelin.R
-import de.mocows.gelin.view.gelinView.FliesstextString
+import de.mocows.gelin.view.gelinComposable.FliesstextString
+import de.mocows.gelin.view.gelinComposable.NavDrawerItem
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 import androidx.compose.material.Icon as Icon1
@@ -99,7 +99,9 @@ fun Drawer(scope: CoroutineScope, scaffoldState: ScaffoldState, navController: N
         NavDrawerItem.WoIstDerNaechsteSupermarkt,
         NavDrawerItem.Haushaltsbuch,
         NavDrawerItem.MeinProfil,
-        NavDrawerItem.Einstellungen
+        NavDrawerItem.Einstellungen,
+        NavDrawerItem.Login,
+        NavDrawerItem.Registrieren
     )
     Column {
         // Header
@@ -195,6 +197,12 @@ fun Navigation(navController: NavHostController) {
             /*TODO*/
         }
         composable(NavDrawerItem.Einstellungen.route) {
+            /*TODO*/
+        }
+        composable(NavDrawerItem.Login.route) {
+            Login()
+        }
+        composable(NavDrawerItem.Registrieren.route) {
             /*TODO*/
         }
     }

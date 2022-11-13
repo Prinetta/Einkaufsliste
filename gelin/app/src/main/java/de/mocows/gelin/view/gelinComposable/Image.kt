@@ -1,13 +1,11 @@
-package de.mocows.gelin.view.gelinView
+package de.mocows.gelin.view.gelinComposable
 
-import android.media.Image
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.semantics.Role.Companion.Image
 import de.mocows.gelin.R
 
 @Composable

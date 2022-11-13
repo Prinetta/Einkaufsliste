@@ -1,4 +1,4 @@
-package de.mocows.gelin.view.gelinView.Dataclasses
+package de.mocows.gelin.view.gelinComposable.Dataclasses
 
 import androidx.compose.ui.graphics.vector.ImageVector
 

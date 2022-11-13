@@ -1,4 +1,4 @@
-package de.mocows.gelin.view.gelinView
+package de.mocows.gelin.view.gelinComposable
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding

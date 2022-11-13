@@ -1,4 +1,4 @@
-package de.mocows.gelin.view
+package de.mocows.gelin.view.gelinComposable
 
 
 import de.mocows.gelin.R
@@ -30,6 +30,18 @@ sealed class NavDrawerItem(var route: String, var name: String, var beschreibung
 
     object Einstellungen :
         NavDrawerItem(R.string.einstellungen.toString(),
+            R.string.einstellungen.toString(),
+            R.string.geheZuEinstellungen,
+            R.drawable.ic_settings)
+
+    object Login :
+        NavDrawerItem(R.string.login.toString(),
+            R.string.login.toString(),
+            R.string.geheZuEinstellungen,
+            R.drawable.ic_settings)
+
+    object Registrieren :
+        NavDrawerItem(R.string.registrieren.toString(),
             R.string.einstellungen.toString(),
             R.string.geheZuEinstellungen,
             R.drawable.ic_settings)
