@@ -13,22 +13,22 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 @Composable
-fun Ueberschrift1(name: Int) {
+fun Ueberschrift1(name: String) {
     Text(text = "$name!", fontSize = 24.sp)
 }
 
 @Composable
-fun Ueberschrift2(name: Int) {
+fun Ueberschrift2(name: String) {
     Text(text = "$name!", fontSize = 18.sp)
 }
 
 @Composable
-fun Ueberschrift3(name: Int) {
+fun Ueberschrift3(name: String) {
     Text(text = "$name!", fontSize = 16.sp)
 }
 
 @Composable
-fun Fliesstext(name: Int) {
+fun Fliesstext(name: String) {
     Text(text = "$name!", fontSize = 12.sp)
 }
 
@@ -38,7 +38,7 @@ fun FliesstextString(name: String){
 }
 
 @Composable
-fun untertitel(name: Int) {
+fun untertitel(name: String) {
     Text(text = "$name!", fontSize = 10.sp)
 }
 

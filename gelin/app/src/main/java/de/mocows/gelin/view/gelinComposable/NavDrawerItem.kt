@@ -1,48 +1,53 @@
 package de.mocows.gelin.view.gelinComposable
 
 
+import androidx.compose.ui.res.stringResource
 import de.mocows.gelin.R
+import de.mocows.gelin.R.string
 
-sealed class NavDrawerItem(var route: String, var name: String, var beschreibung: Int, var icon: Int ) {
+sealed class NavDrawerItem(var route: String, var name: String, var beschreibung: String, var icon: Int ) {
 
-    object Einkaufsliste : NavDrawerItem(R.string.einkaufsliste.toString(),
-        R.string.einkaufsliste.toString(),
-        R.string.geheZurEinkaufsliste,
+
+    object Einkaufsliste : NavDrawerItem(
+        "Einkaufsliste",
+     "Einkaufsliste", "gehe zur Einkaufsliste",
         R.drawable.ic_einkaufswagen)
 
     object Angebote :
-        NavDrawerItem(R.string.angebote.toString(), R.string.angebote.toString(), R.string.geheZuAngebote, R.drawable.ic_vector_24)
+        NavDrawerItem("Angebote",
+            "Angebote",
+            "gehe zu Angebote",
+            R.drawable.ic_vector_24)
 
-    object WoIstDerNaechsteSupermarkt : NavDrawerItem(R.string.woIstDerNächsteSupermarkt.toString(),
-        R.string.woIstDerNächsteSupermarkt.toString(),
-        R.string.geheZuWoIstDerNächsteSupermarkt,
+    object WoIstDerNaechsteSupermarkt : NavDrawerItem("Wo ist der nächste Supermarkt?",
+        "Wo ist der nächste Supermarkt?",
+        "gehe zu wo ist der nächste Supermarkt?",
         R.drawable.ic_region)
 
-    object Haushaltsbuch : NavDrawerItem(R.string.haushaltsbuch.toString(),
-        R.string.haushaltsbuch.toString(),
-        R.string.geheZuAngebote,
+    object Haushaltsbuch : NavDrawerItem("Haushaltsbuch",
+        "Haushaltsbuch",
+        "Gehe zum Haushaltsbuch",
         R.drawable.ic_haushaltsbuch_24)
 
-    object MeinProfil : NavDrawerItem(R.string.meinProfil.toString(),
-        R.string.meinProfil.toString(),
-        R.string.geheZuMeinProfil,
+    object MeinProfil : NavDrawerItem("mein Profil",
+        "mein Profil",
+        "gehe zu mein Profil",
         R.drawable.ic_person_white)
 
     object Einstellungen :
-        NavDrawerItem(R.string.einstellungen.toString(),
-            R.string.einstellungen.toString(),
-            R.string.geheZuEinstellungen,
+        NavDrawerItem("Einstellungen",
+            "Einstellungen",
+            "gehe zu Einstellungen",
             R.drawable.ic_settings)
 
     object Login :
-        NavDrawerItem(R.string.login.toString(),
-            R.string.login.toString(),
-            R.string.geheZuEinstellungen,
-            R.drawable.ic_settings)
+        NavDrawerItem("login",
+            "login","geheZuEinstellungen",
+            R.drawable.ic_person_white)
 
     object Registrieren :
-        NavDrawerItem(R.string.registrieren.toString(),
-            R.string.einstellungen.toString(),
-            R.string.geheZuEinstellungen,
-            R.drawable.ic_settings)
+        NavDrawerItem("registrieren",
+            "einstellungen",
+            "gehe zu Einstellungen",
+            R.drawable.ic_person_white)
 }

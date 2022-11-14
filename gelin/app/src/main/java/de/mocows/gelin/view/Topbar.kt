@@ -52,18 +52,15 @@ fun MainScreen() {
     val scaffoldState = rememberScaffoldState(rememberDrawerState(DrawerValue.Closed))
     val scope = rememberCoroutineScope()
     val navController = rememberNavController()
-    // If you want the drawer from the right side, uncomment the following
-    // CompositionLocalProvider(LocalLayoutDirection provides LayoutDirection.Rtl) {
     Scaffold(
         scaffoldState = scaffoldState,
         topBar = { TopBar(scope = scope, scaffoldState = scaffoldState) },
         drawerBackgroundColor = colorResource(id = R.color.darkgreen),
-        // scrimColor = Color.Red,  // Color for the fade background when you open/close the drawer
-        drawerContent = {
+       drawerContent = {
             Drawer(scope = scope, scaffoldState = scaffoldState, navController = navController)
         },
-        backgroundColor = colorResource(id = R.color.brightgreen)
-    ) { padding ->  // We need to pass scaffold's inner padding to content. That's why we use Box.
+        backgroundColor = colorResource(id = R.color.white)
+    ) { padding ->
         Box(modifier = Modifier.padding(padding)) {
             Navigation(navController = navController)
         }
@@ -200,7 +197,7 @@ fun Navigation(navController: NavHostController) {
             /*TODO*/
         }
         composable(NavDrawerItem.Login.route) {
-            Login()
+            LoginView()
         }
         composable(NavDrawerItem.Registrieren.route) {
             /*TODO*/
