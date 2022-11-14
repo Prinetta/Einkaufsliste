@@ -1,5 +1,6 @@
 package de.mocows.gelin.view.gelinComposable
 
+import androidx.compose.foundation.gestures.scrollable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Text
@@ -44,7 +45,7 @@ fun untertitel(name: String) {
 
 @Composable
 fun ImputFieldOhneEingabeText(name: String) {
-    Column(Modifier.padding(16.dp)) {
+    Column(Modifier.padding(10.dp)) {
         val textState = remember { mutableStateOf(TextFieldValue()) }
         TextField(
             value = textState.value,
@@ -56,7 +57,7 @@ fun ImputFieldOhneEingabeText(name: String) {
 
 @Composable
 fun ImputFieldMitEingabeText(name: String) {
-    Column(Modifier.padding(16.dp)) {
+    Column(Modifier.padding(10.dp)) {
         val textState = remember { mutableStateOf(TextFieldValue()) }
         TextField(
             value = textState.value,

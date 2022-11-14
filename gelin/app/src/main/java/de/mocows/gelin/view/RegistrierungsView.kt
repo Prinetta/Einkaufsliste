@@ -16,20 +16,20 @@ import de.mocows.gelin.R
 import de.mocows.gelin.view.gelinComposable.*
 
 @Composable
-fun LoginView(){
+fun RegistrierungsView(){
     Column(
         modifier = Modifier
             .background(colorResource(id = R.color.darkgreen))
             .fillMaxSize(),
 
-    ) {
+        ) {
         LogoImage()
-        CardViewLogin()
+        CardViewRegistierung()
     }
 }
 
 @Composable
-fun CardViewLogin() {
+fun CardViewRegistierung() {
     Card(
         modifier = Modifier
             .fillMaxWidth()
@@ -38,25 +38,27 @@ fun CardViewLogin() {
         Column(
             modifier = Modifier.padding(15.dp)
         ) {
-            Ueberschrift1(stringResource(id = R.string.login))
-            Fliesstext(stringResource(id =  R.string.begrueßungsTextLogin))
-            ImputFieldOhneEingabeText(stringResource(id = R.string.login))
+            Ueberschrift1(stringResource(id = R.string.registrieren))
+            Fliesstext(stringResource(id =  R.string.begrueßungsTextRegistrierung))
+            ImputFieldOhneEingabeText(stringResource(id = R.string.name))
+            ImputFieldOhneEingabeText(stringResource(id = R.string.username))
             ImputFieldMitEingabeText(stringResource(id = R.string.passwort))
-            LoginButton()
+            ImputFieldMitEingabeText(stringResource(id = R.string.passwortBestaetigen))
+            RegistrierungsButton()
         }
     }
 }
 
-
 @Composable
-fun LoginButton() {
+fun RegistrierungsButton() {
     androidx.compose.material.Button(onClick = { /* Do something! */ },
         colors = ButtonDefaults.textButtonColors(
             backgroundColor = colorResource(id = R.color.darkgreen)
         ),
         modifier = Modifier.fillMaxWidth(1f)
+            .fillMaxHeight(2f)
     ) {
-        Fliesstext(stringResource(id = R.string.login))
+        Fliesstext(stringResource(id = R.string.registrieren))
     }
 }
 

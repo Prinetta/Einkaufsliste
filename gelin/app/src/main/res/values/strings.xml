@@ -54,9 +54,10 @@
     <!--Registrierung und Login-->
     <string name="login">Login</string>
     <string name="begrueßungsTextLogin">Logge dich ein um alle Funktionen der App zu nutzen</string>
+    <string name="begrueßungsTextRegistrierung">Registriere dich ein um alle Funktionen der App zu nutzen</string>
     <string name="registrierung">Registrierung</string>
     <string name="registrieren">Registrieren</string>
-    <string name="usernamee">Username</string>
+    <string name="username">Username</string>
     <string name="passwort">Passwort</string>
     <string name="passwortBestaetigen">Passwort bestätigen</string>
     <string name="passwortVergessen">Passwort vergessen?</string>

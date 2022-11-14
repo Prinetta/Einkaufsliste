@@ -200,7 +200,7 @@ fun Navigation(navController: NavHostController) {
             LoginView()
         }
         composable(NavDrawerItem.Registrieren.route) {
-            /*TODO*/
+            RegistrierungsView()
         }
     }
 }
