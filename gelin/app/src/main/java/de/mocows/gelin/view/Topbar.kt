@@ -32,6 +32,7 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import de.mocows.gelin.Login
 import de.mocows.gelin.R
+import de.mocows.gelin.view.gelinComposable.EinkaufslisteView
 import de.mocows.gelin.view.gelinComposable.FliesstextString
 import de.mocows.gelin.view.gelinComposable.NavDrawerItem
 import kotlinx.coroutines.CoroutineScope
@@ -179,7 +180,7 @@ fun DrawerItem(item: NavDrawerItem, selected: Boolean, onItemClick: (NavDrawerIt
 fun Navigation(navController: NavHostController) {
     NavHost(navController, startDestination = NavDrawerItem.Einkaufsliste.route) {
         composable(NavDrawerItem.Einkaufsliste.route) {
-            /*TODO*/
+            EinkaufslisteView()
         }
         composable(NavDrawerItem.Angebote.route) {
             /*TODO*/

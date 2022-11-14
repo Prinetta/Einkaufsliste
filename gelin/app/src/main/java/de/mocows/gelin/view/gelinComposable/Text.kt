@@ -1,5 +1,6 @@
 package de.mocows.gelin.view.gelinComposable
 
+import android.text.Layout
 import androidx.compose.foundation.gestures.scrollable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
