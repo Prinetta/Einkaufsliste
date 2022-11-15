@@ -1,5 +1,4 @@
-package de.mocows.gelin.view
-
+package de.mocows.gelin.view.gelinComposable
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -30,11 +29,10 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import de.mocows.gelin.Login
 import de.mocows.gelin.R
-import de.mocows.gelin.view.gelinComposable.EinkaufslisteView
-import de.mocows.gelin.view.gelinComposable.FliesstextString
-import de.mocows.gelin.view.gelinComposable.NavDrawerItem
+import de.mocows.gelin.view.LoginView
+import de.mocows.gelin.view.RegistrierungsView
+import de.mocows.gelin.view.gelinComposable.Dataclasses.NavDrawerItem
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 import androidx.compose.material.Icon as Icon1
@@ -43,7 +41,6 @@ class Topbar : ComponentActivity() {
  override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-
         }
     }
 }
@@ -183,7 +180,7 @@ fun Navigation(navController: NavHostController) {
             EinkaufslisteView()
         }
         composable(NavDrawerItem.Angebote.route) {
-            /*TODO*/
+            LebensmittelHinzufuegenManuell()
         }
         composable(NavDrawerItem.WoIstDerNaechsteSupermarkt.route) {
             /*TODO*/

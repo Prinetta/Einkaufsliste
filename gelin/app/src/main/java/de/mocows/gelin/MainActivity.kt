@@ -3,7 +3,7 @@ package de.mocows.gelin
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import de.mocows.gelin.view.MainScreen
+import de.mocows.gelin.view.gelinComposable.MainScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

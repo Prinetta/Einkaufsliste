@@ -20,6 +20,7 @@
 
     <!--Lebensmittelgruppen und Sachen aus dem Supermarkt-->
     <string name="budget">Budget</string>
+    <string name="budgetAendern">Budget ändern</string>
     <string name="lebensmittelHinzufuegen">Lebensmittel hinzufügen</string>
     <string name="obstUndGemuese">Obst und Gemüse</string>
     <string name="milcherprodukte">Milchprodukte</string>

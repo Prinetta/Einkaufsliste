@@ -1,16 +1,14 @@
 package de.mocows.gelin.view.gelinComposable
 
+
 import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
-import androidx.compose.material.Card
 import androidx.compose.material.Checkbox
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.colorResource
-import androidx.compose.ui.unit.dp
 import de.mocows.gelin.R
 
 /*Wem was besseres einfällt dars es Refactorn.
