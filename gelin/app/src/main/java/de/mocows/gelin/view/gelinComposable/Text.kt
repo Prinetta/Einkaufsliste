@@ -1,8 +1,8 @@
 package de.mocows.gelin.view.gelinComposable
 
-import android.text.Layout
-import androidx.compose.foundation.gestures.scrollable
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Text
 import androidx.compose.material.TextField
@@ -10,6 +10,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -45,26 +46,39 @@ fun untertitel(name: String) {
 }
 
 @Composable
-fun ImputFieldOhneEingabeText(name: String) {
+fun InputFieldOhneEingabeText(name: String) {
     Column(Modifier.padding(10.dp)) {
         val textState = remember { mutableStateOf(TextFieldValue()) }
         TextField(
             value = textState.value,
             onValueChange = { textState.value = it }
         )
-        Text(text= "$name")
+        Text(text = name)
     }
 }
 
 @Composable
-fun ImputFieldMitEingabeText(name: String) {
+fun InputFieldMitEingabeText(name: String) {
     Column(Modifier.padding(10.dp)) {
         val textState = remember { mutableStateOf(TextFieldValue()) }
         TextField(
             value = textState.value,
-            onValueChange = { textState.value = it
-            }
+            onValueChange = { textState.value = it }
         )
-        Text(text= "$name" + textState.value.text)
+        Text(text = name + textState.value.text)
+    }
+}
+
+@Composable
+fun InputFieldWithPrompt(modifier: Modifier = Modifier, placeholder: String, fontSize: Int = 18) {
+    Box(modifier.padding(10.dp)) {
+        val textState = remember { mutableStateOf(TextFieldValue()) }
+        TextField(
+            modifier = modifier.fillMaxWidth(),
+            textStyle = TextStyle(fontSize = fontSize.sp),
+            value = textState.value,
+            onValueChange = { textState.value = it },
+            placeholder = { Text(text = placeholder, fontSize = fontSize.sp) }
+        )
     }
 }

@@ -135,7 +135,7 @@ fun Drawer(scope: CoroutineScope, scaffoldState: ScaffoldState, navController: N
         }
         Spacer(modifier = Modifier.weight(1f))
         Text(
-            text = "Developed by Gelin Stidios",
+            text = "Developed by Gelin Studios",
             color = androidx.compose.ui.graphics.Color.White,
             textAlign = TextAlign.Center,
             fontWeight = FontWeight.Bold,
