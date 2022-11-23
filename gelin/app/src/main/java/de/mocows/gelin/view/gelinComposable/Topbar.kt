@@ -15,6 +15,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
@@ -30,8 +31,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import de.mocows.gelin.R
-import de.mocows.gelin.view.LoginView
-import de.mocows.gelin.view.RegistrierungsView
+import de.mocows.gelin.view.*
 import de.mocows.gelin.view.gelinComposable.Dataclasses.NavDrawerItem
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
@@ -54,7 +54,7 @@ fun MainScreen() {
         scaffoldState = scaffoldState,
         topBar = { TopBar(scope = scope, scaffoldState = scaffoldState) },
         drawerBackgroundColor = colorResource(id = R.color.darkgreen),
-       drawerContent = {
+        drawerContent = {
             Drawer(scope = scope, scaffoldState = scaffoldState, navController = navController)
         },
         backgroundColor = colorResource(id = R.color.white)
@@ -135,8 +135,8 @@ fun Drawer(scope: CoroutineScope, scaffoldState: ScaffoldState, navController: N
         }
         Spacer(modifier = Modifier.weight(1f))
         Text(
-            text = "Developed by Gelin Stidios",
-            color = androidx.compose.ui.graphics.Color.White,
+            text = "Developed by Gelin Studios",
+            color = Color.White,
             textAlign = TextAlign.Center,
             fontWeight = FontWeight.Bold,
             modifier = Modifier
@@ -168,7 +168,8 @@ fun DrawerItem(item: NavDrawerItem, selected: Boolean, onItemClick: (NavDrawerIt
                 .width(35.dp)
         )
         Spacer(modifier = Modifier.width(7.dp))
-        FliesstextString(name = item.name)
+        Text(text = item.name, fontSize = 16.sp, color = Color.White)
+        //FliesstextString(name = item.name)
     }
 }
 
@@ -186,7 +187,7 @@ fun Navigation(navController: NavHostController) {
             /*TODO*/
         }
         composable(NavDrawerItem.Haushaltsbuch.route) {
-            /*TODO*/
+            BookkeepingView()
         }
         composable(NavDrawerItem.MeinProfil.route) {
             /*TODO*/

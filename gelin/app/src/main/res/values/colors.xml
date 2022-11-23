@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     961A8300
-    <color name="darkgreen">#961A8300</color>
+    <color name="darkgreen">#1A8300</color>
     <color name="brightgreen">#2E9E12</color>
     <color name="mediumgrey">#D9D9D9</color>
     <color name="brightgray">#A2A2A2</color>
@@ -10,8 +10,8 @@
     <color name="white">#FFFFFFFF</color>
 
     <!--Weitere Farben Einkaufsliste-->
-    <color name="pastelgreen">#BEFFC9</color>
-    <color name="pastellyello">#FEFFBE</color>
+    <color name="lightgreen">#BEFFC9</color>
+    <color name="lightyellow">#FEFFBE</color>
     <color name="pastellred">#FFBEBE</color>
     <color name="pastellorange">#FFE27A</color>
     <color name="pastellblau">#80DEEA</color>

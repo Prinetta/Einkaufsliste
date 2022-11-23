@@ -1,11 +1,11 @@
-package de.mocows.gelin.view.gelinComposable
+package de.mocows.gelin.view
 
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.runtime.*
-import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import de.mocows.gelin.R
+import de.mocows.gelin.view.gelinComposable.ImputFieldOhneEingabeText
 
 @Composable
 fun LebensmittelHinzufuegenManuell(){

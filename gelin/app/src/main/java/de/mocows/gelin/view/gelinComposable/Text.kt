@@ -10,38 +10,39 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 @Composable
 fun Ueberschrift1(name: String) {
-    Text(text = "$name!", fontSize = 24.sp)
+    Text(text = name, fontSize = 24.sp, fontWeight = FontWeight.Bold)
 }
 
 @Composable
 fun Ueberschrift2(name: String) {
-    Text(text = "$name!", fontSize = 18.sp)
+    Text(text = name, fontSize = 20.sp, fontWeight = FontWeight.Bold)
 }
 
 @Composable
 fun Ueberschrift3(name: String) {
-    Text(text = "$name!", fontSize = 16.sp)
+    Text(text = name, fontSize = 16.sp, fontWeight = FontWeight.Bold)
 }
 
 @Composable
 fun Fliesstext(name: String) {
-    Text(text = "$name!", fontSize = 12.sp)
+    Text(text = name, fontSize = 16.sp)
 }
 
 @Composable
 fun FliesstextString(name: String){
-    Text(text = "$name!", fontSize = 12.sp)
+    Text(text = name, fontSize = 16.sp)
 }
 
 @Composable
-fun untertitel(name: String) {
-    Text(text = "$name!", fontSize = 10.sp)
+fun Untertitel(name: String) {
+    Text(text = name, fontSize = 12.sp)
 }
 
 @Composable
