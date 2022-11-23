@@ -15,7 +15,20 @@
         android:theme="@style/Theme.Gelin"
         tools:targetApi="31">
         <activity
+<<<<<<< HEAD
             android:name="Registrierung"
+=======
+            android:name=".AngebotDerWoche"
+            android:exported="false"
+            android:label="@string/title_activity_angebot_der_woche"
+            android:theme="@style/Theme.Gelin">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Registrierung"
+>>>>>>> 26377e59148bbf7fb993f8fb0d9ab511e9240fa1
             android:exported="false"
             android:label="@string/title_activity_registrierung"
             android:theme="@style/Theme.Gelin">

@@ -23,8 +23,18 @@ fun LogoImage(
     val image: Painter = painterResource(id = R.drawable.ic_logo212)
     Image(painter = image, contentDescription = "Logo Gelin")
 }
+
+@Composable
+fun ImageProdukt(
+    modifier: Modifier = Modifier
+        .fillMaxWidth()
+) {
+    val image: Painter = painterResource(id = R.drawable.background_green)
+    Image(painter = image, contentDescription = "Hier ist das Bild des Angebots")
+}
+
 @Preview
 @Composable
 fun ImageLogoPreview(){
-    LogoImage()
+    ImageProdukt()
 }
