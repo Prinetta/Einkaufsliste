@@ -84,5 +84,6 @@
     <string name="title_activity_app_bar">AppBar</string>
     <string name="title_activity_topbar">Topbar</string>
     <string name="title_activity_registrierung">Registrierung</string>
+    <string name="title_activity_angebot_der_woche">AngebotDerWoche</string>
 
 </resources>
