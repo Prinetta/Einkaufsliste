@@ -19,11 +19,11 @@
     <string name="rechtlicheInformation">Rechtliche Information</string>
 
     <!--Lebensmittelgruppen und Sachen aus dem Supermarkt-->
-    <string name="budget">Budget</string>
+    <string name="budget">Budget:</string>
     <string name="budgetAendern">Budget ändern</string>
     <string name="lebensmittelHinzufuegen">Lebensmittel hinzufügen</string>
     <string name="obstUndGemuese">Obst und Gemüse</string>
-    <string name="milcherprodukte">Milchprodukte</string>
+    <string name="milchprodukte">Milchprodukte</string>
     <string name="fleischprodukte">Fleischprodukte</string>
     <string name="nudelUndPasta">Nudel und Pasta</string>
     <string name="brotUndBackwaren">Brot und Backwaren</string>
@@ -84,5 +84,6 @@
     <string name="title_activity_app_bar">AppBar</string>
     <string name="title_activity_topbar">Topbar</string>
     <string name="title_activity_registrierung">Registrierung</string>
+    <string name="title_activity_angebot_der_woche">AngebotDerWoche</string>
 
 </resources>
