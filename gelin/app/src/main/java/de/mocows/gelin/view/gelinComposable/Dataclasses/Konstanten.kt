@@ -1,5 +1,7 @@
 package de.mocows.gelin.view.gelinComposable.Dataclasses
 
+import java.util.jar.Attributes.Name
+
 const val EINKAUFSLISTE: String = "Einkaufsliste"
 const val EINKAUFSLISTEBESCHREIBUNG: String = "Gehe zur Einkaufsliste"
 
@@ -34,4 +36,24 @@ const val STUECK :String = "Stück"
 const val DOSEPACKUNG: String = "Dose/ Packung"
 const val BEUTEL: String = "Beutel/ Sack"
 const val FLASCH :String = "Flasche"
+
+//Profil
+const val UEBERDICH: String = "Über dich"
+const val NAME: String = "Name"
+const val USERBEISPIELNAME: String = "Maxima Mustermann"
+const val EMAIL: String = "E-Mail"
+const val EMAILBEISPIELNAMEE: String = "maxima.mustermann@mustermail.de"
+const val PASSWORD: String = "Passwort"
+const val ZUGRIFSRECHT: String = "Zugrifsrecht"
+const val USERNAME2: String = "Username 2"
+const val USERNAME3: String = "Username 3"
+const val USERNAME4: String = "Username 4"
+const val VOLLRECHTE: String = "volle Rechte"
+const val EINGESCHRAENKERECHTE: String = "eingeschränke Rechte"
+const val LESERECHTE: String = "Leserechte"
+const val FAVORISIERTERSUPERMARK: String = "Lieblingssupermarkt"
+const val SEKUNDAERFAVORISIERTERSUPERMARK: String = "Sekundär Favorisierter Supermarkt"
+const val NAMEDESSUOERMARK: String = "Name des Supermarkten"
+const val ANSCHRIFTDESSUPERMARKT: String = "Anschrift des Supermarkt"
+const val PROFILBILD: String = "Profilbild"
 

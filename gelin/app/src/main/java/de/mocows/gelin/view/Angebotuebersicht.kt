@@ -10,8 +10,8 @@ import de.mocows.gelin.view.gelinComposable.Dataclasses.NavDrawerItem
 
 
 @Composable
-fun Angebotsseite(message: List<Message>){
-    Ueberschrift1(name = "Angebot der Wochee")
+fun Angebotsseite(){
+    Ueberschrift1(name = "Angebot der Woche")
     ProduktAnzeigeAngebot()
     
 

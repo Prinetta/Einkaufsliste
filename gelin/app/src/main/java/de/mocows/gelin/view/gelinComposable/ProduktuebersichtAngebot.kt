@@ -30,28 +30,30 @@ fun ProduktAnzeigeAngebot() {
             }
         )
     }
-    LazyColumn(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(10.dp)
-            .border(width = 1.dp, color = Color(R.color.brightgray))) {
-/*        for){
-        items(angebot.size){
-            Column (modifier = Modifier
-                .padding(10.dp)) {
-                Image(angebot[i].bild, contentDescription = "Lebensmittel")
-                Ueberschrift2(name = items[i].produktName)
-                Text(text = items[i].marke)
-                Row {
-                    Image(painter = painterResource(id = R.drawable.ic_location_green_24), contentDescription = "")
-                    SpacerVerticalS()
-                    Text(text = items[i].shopadresse)
 
-                }
+        LazyColumn(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(10.dp)
+                .border(width = 1.dp, color = Color(R.color.brightgray))) {
+            angebot.forEach {
+                items(angebot.size) { i, ->
+                    Column(modifier = Modifier.padding(10.dp)) {
+                        //Image(angebot[i].bild, contentDescription = "Lebensmittel")
+                        Ueberschrift2(name = items[i].produktName)
+                        Text(text = items[i].marke)
+                        Row {
+                            Image(painter = painterResource(id = R.drawable.ic_location_green_24),
+                                contentDescription = "")
+                            SpacerVerticalS()
+                            Text(text = items[i].shopadresse)
+
+                        }
+                    }
             }
-        }*/
         }
     }
+}
 
 
 

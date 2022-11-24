@@ -181,7 +181,7 @@ fun Navigation(navController: NavHostController) {
             EinkaufslisteView()
         }
         composable(NavDrawerItem.Angebote.route) {
-            //Angebotsseite()
+            Angebotsseite()
         }
         composable(NavDrawerItem.WoIstDerNaechsteSupermarkt.route) {
             LebensmittelHinzufuegenManuell()
@@ -190,7 +190,7 @@ fun Navigation(navController: NavHostController) {
             BookkeepingView()
         }
         composable(NavDrawerItem.MeinProfil.route) {
-            /*TODO*/
+            UserProfil()
         }
         composable(NavDrawerItem.Einstellungen.route) {
             /*TODO*/
