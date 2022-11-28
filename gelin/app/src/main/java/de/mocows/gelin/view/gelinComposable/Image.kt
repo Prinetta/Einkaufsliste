@@ -1,12 +1,9 @@
 package de.mocows.gelin.view.gelinComposable
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.fillMaxHeight
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.res.painterResource
@@ -37,4 +34,10 @@ fun ImageProdukt(
 @Composable
 fun ImageLogoPreview(){
     ImageProdukt()
+}
+@Preview
+@Composable
+fun StiftFuerBearbeiten(modifier: Modifier) {
+    Image(painter = painterResource(id = R.drawable.ic_pencil_36),
+        contentDescription = "bearbeiten")
 }

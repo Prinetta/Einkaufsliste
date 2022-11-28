@@ -17,6 +17,7 @@
     <string name="einstellungen">Einstellungen</string>
     <string name="datenschutzhinweise">Datenschutzhinweise</string>
     <string name="rechtlicheInformation">Rechtliche Information</string>
+    <string name="profilbild">Profilbild</string>
 
     <!--Lebensmittelgruppen und Sachen aus dem Supermarkt-->
     <string name="budget">Budget:</string>
