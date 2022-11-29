@@ -1,6 +1,7 @@
 package de.mocows.gelin.view.gelinComposable
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.runtime.Composable
@@ -22,11 +23,8 @@ fun LogoImage(
 }
 
 @Composable
-fun ImageProdukt(
-    modifier: Modifier = Modifier
-        .fillMaxWidth()
-) {
-    val image: Painter = painterResource(id = R.drawable.background_green)
+fun ImageProdukt() {
+    val image: Painter = painterResource(id = R.drawable.lebensmittel)
     Image(painter = image, contentDescription = "Hier ist das Bild des Angebots")
 }
 
@@ -35,9 +33,4 @@ fun ImageProdukt(
 fun ImageLogoPreview(){
     ImageProdukt()
 }
-@Preview
-@Composable
-fun StiftFuerBearbeiten(modifier: Modifier) {
-    Image(painter = painterResource(id = R.drawable.ic_pencil_36),
-        contentDescription = "bearbeiten")
-}
+

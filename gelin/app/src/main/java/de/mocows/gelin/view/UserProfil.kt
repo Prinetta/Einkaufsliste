@@ -85,6 +85,11 @@ fun UserProfil( ) {
     }
 }
 
+@Composable
+fun StiftFuerBearbeiten(modifier: Modifier) {
+
+}
+
 @Preview
 @Composable
 fun UserProfilPreview(){

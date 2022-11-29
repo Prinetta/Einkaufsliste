@@ -2,6 +2,7 @@ package de.mocows.gelin.view.gelinComposable.Dataclasses
 
 import java.util.jar.Attributes.Name
 
+const val PRODUKTHINZUFUEGEN: String = "Produkt hinzufügen"
 const val EINKAUFSLISTE: String = "Einkaufsliste"
 const val EINKAUFSLISTEBESCHREIBUNG: String = "Gehe zur Einkaufsliste"
 

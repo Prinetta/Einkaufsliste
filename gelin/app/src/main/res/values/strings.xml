@@ -86,5 +86,8 @@
     <string name="title_activity_topbar">Topbar</string>
     <string name="title_activity_registrierung">Registrierung</string>
     <string name="title_activity_angebot_der_woche">AngebotDerWoche</string>
+    <string name="title_activity_adding_products_after_usering_scanner">
+        AddingProductsAfterUseringScanner
+    </string>
 
 </resources>

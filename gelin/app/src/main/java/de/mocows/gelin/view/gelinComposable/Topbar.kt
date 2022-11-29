@@ -193,7 +193,7 @@ fun Navigation(navController: NavHostController) {
             UserProfil()
         }
         composable(NavDrawerItem.Einstellungen.route) {
-            /*TODO*/
+            AddingProductsUseingScanner()
         }
         composable(NavDrawerItem.Login.route) {
             LoginView()
