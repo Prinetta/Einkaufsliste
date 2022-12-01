@@ -13,12 +13,12 @@ import androidx.compose.ui.unit.sp
 import de.mocows.gelin.R
 import de.mocows.gelin.ui.userinterface.ui.theme.brightgreen
 import de.mocows.gelin.view.gelinComposable.InputFieldWithPrompt
-import de.mocows.gelin.view.gelinComposable.SpacerHorizontalS
+import de.mocows.gelin.view.gelinComposable.SpacerVerticalS
 
 @Composable
 fun LebensmittelHinzufuegenManuell(){
     Column {
-        SpacerHorizontalS()
+        SpacerVerticalS()
         InputFieldWithPrompt(
             modifier = Modifier.fillMaxWidth(),
             placeholder = stringResource(id = R.string.lebensmittelHinzufuegen)
