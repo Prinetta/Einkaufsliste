@@ -5,9 +5,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material.Button
-import androidx.compose.material.ButtonDefaults
-import androidx.compose.material.Card
+import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -15,11 +13,17 @@ import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
 import de.mocows.gelin.R
 import de.mocows.gelin.view.gelinComposable.*
+import de.mocows.gelin.view.gelinComposable.Dataclasses.EINKAUFSLISTE
+import de.mocows.gelin.view.gelinComposable.Dataclasses.PRODUKTHINZUFUEGEN
 
 @Composable
-fun EinkaufslisteView() {
+fun EinkaufslisteView(navController: NavHostController) {
+
     Column(
         modifier = Modifier
             .padding(horizontal = 15.dp)
@@ -31,7 +35,7 @@ fun EinkaufslisteView() {
             modifier = Modifier
                 .padding(vertical = 10.dp)
         ) {// add groceries
-            LebensmittelHinzufuegenButton()
+            LebensmittelHinzufuegenButton(navController)
         }
         Ueberschrift1(name = stringResource(id = R.string.einkaufsliste))
         CardViewCategory(stringResource(R.string.obstUndGemuese), R.color.lightgreen)
@@ -91,7 +95,7 @@ fun BearbeitenIconButton(){
     }
 }
 @Composable
-fun LebensmittelHinzufuegenButton(){
+fun LebensmittelHinzufuegenButton(navController: NavHostController) {
     Button(
         modifier = Modifier
             .fillMaxWidth(1f),
@@ -99,7 +103,11 @@ fun LebensmittelHinzufuegenButton(){
                 backgroundColor = colorResource(id = R.color.darkgreen),
                 contentColor =  colorResource(id = R.color.white)
             ),
-        onClick = {}) {
+        onClick = {
+            navController.navigate(PRODUKTHINZUFUEGEN) {
+                popUpTo(EINKAUFSLISTE){ inclusive = true }
+            }
+        }){
         Fliesstext(name = stringResource(id = R.string.lebensmittelHinzufuegen))
         SpacerHorizontalXS()
         Image(

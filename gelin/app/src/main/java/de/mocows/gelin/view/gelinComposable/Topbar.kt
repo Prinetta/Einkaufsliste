@@ -32,7 +32,9 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import de.mocows.gelin.R
 import de.mocows.gelin.view.*
+import de.mocows.gelin.view.gelinComposable.Dataclasses.HAUSHALTSBUCH_DETAIL
 import de.mocows.gelin.view.gelinComposable.Dataclasses.NavDrawerItem
+import de.mocows.gelin.view.gelinComposable.Dataclasses.PRODUKTHINZUFUEGEN
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 import androidx.compose.material.Icon as Icon1
@@ -178,7 +180,7 @@ fun DrawerItem(item: NavDrawerItem, selected: Boolean, onItemClick: (NavDrawerIt
 fun Navigation(navController: NavHostController) {
     NavHost(navController, startDestination = NavDrawerItem.Einkaufsliste.route) {
         composable(NavDrawerItem.Einkaufsliste.route) {
-            EinkaufslisteView()
+            EinkaufslisteView(navController)
         }
         composable(NavDrawerItem.Angebote.route) {
             Angebotsseite()
@@ -187,7 +189,7 @@ fun Navigation(navController: NavHostController) {
             LebensmittelHinzufuegenManuell()
         }
         composable(NavDrawerItem.Haushaltsbuch.route) {
-            BookkeepingView()
+            BookkeepingView(navController)
         }
         composable(NavDrawerItem.MeinProfil.route) {
             UserProfil()
@@ -201,5 +203,7 @@ fun Navigation(navController: NavHostController) {
         composable(NavDrawerItem.Registrieren.route) {
             RegistrierungsView()
         }
+        composable(PRODUKTHINZUFUEGEN) { LebensmittelHinzufuegenManuell() }
+        composable(HAUSHALTSBUCH_DETAIL) { BookkeepingDetailView() }
     }
 }

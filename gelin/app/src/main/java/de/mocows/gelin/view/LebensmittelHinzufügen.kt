@@ -38,7 +38,7 @@ fun LebensmittelHinzufuegenManuell(){
             )
         }
         Button(
-            onClick = { TODO("call to backend work manager to persist item") },
+            onClick = { /*TODO("call to backend work manager to persist item")*/ },
             modifier = Modifier.fillMaxWidth().padding(10.dp),
             colors = ButtonDefaults.buttonColors(backgroundColor = brightgreen, contentColor = Color.White)
         ) {

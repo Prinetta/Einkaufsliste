@@ -46,7 +46,7 @@ fun AddingProductsUseingScanner(){
             )
         }
         Button(
-            onClick = { TODO("call to backend work manager to persist item") },
+            onClick = { /*TODO("call to backend work manager to persist item")*/ },
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(10.dp),

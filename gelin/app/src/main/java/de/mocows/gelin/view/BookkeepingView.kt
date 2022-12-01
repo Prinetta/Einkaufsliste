@@ -12,11 +12,15 @@ import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavHostController
 import de.mocows.gelin.R
 import de.mocows.gelin.view.gelinComposable.*
+import de.mocows.gelin.view.gelinComposable.Dataclasses.EINKAUFSLISTE
+import de.mocows.gelin.view.gelinComposable.Dataclasses.HAUSHALTSBUCH_DETAIL
+import de.mocows.gelin.view.gelinComposable.Dataclasses.NavDrawerItem
 
 @Composable
-fun BookkeepingView() {
+fun BookkeepingView(navController: NavHostController) {
     Column(
         modifier = Modifier
             .padding(horizontal = 15.dp)
@@ -25,20 +29,22 @@ fun BookkeepingView() {
         SpacerVerticalXS()
         Ueberschrift1(name = stringResource(id = R.string.haushaltsbuch))
         Column {
-            BookkeepingItem()
-            BookkeepingItem()
-            BookkeepingItem()
+            BookkeepingItem(navController)
+            BookkeepingItem(navController)
+            BookkeepingItem(navController)
         }
     }
 }
 
 @Composable
-fun BookkeepingItem() {
+fun BookkeepingItem(navController: NavHostController) {
     Card(modifier = Modifier
         .padding(vertical = 5.dp)
         .fillMaxWidth()
         .clickable {
-
+            navController.navigate(HAUSHALTSBUCH_DETAIL){
+                popUpTo(NavDrawerItem.Haushaltsbuch.route){ inclusive = true }
+            }
         },
         elevation = 10.dp){
         Row {
@@ -49,51 +55,52 @@ fun BookkeepingItem() {
                     .background(Color.LightGray)
             )
             SpacerHorizontalXS()
-            BookkeepingStoreAddress()
-        }
-    }
-}
-
-@Composable
-fun BookkeepingStoreAddress(){
-    Column {
-        Ueberschrift3("Einkauf: DD.MM.JJJJ")
-        Fliesstext("[XX,00] €")
-        Row(verticalAlignment = Alignment.CenterVertically) {
-            Image(
-                painterResource(id = R.drawable.ic_location_24),
-                contentDescription ="Store Location",
-                modifier = Modifier
-                    .size(25.dp, 25.dp)
-            )
-            SpacerHorizontalXS()
             Column {
-                Untertitel("[Supermarktname]")
-                Untertitel("[Straße Hausnummer - 12345 Stadt]")
+                Ueberschrift3("Einkauf: DD.MM.JJJJ")
+                Fliesstext("[XX,00] €")
+                BookkeepingStoreAddress()
             }
         }
     }
 }
 
 @Composable
-fun BookkeepingDetailView() {
-    Column(
-        modifier = Modifier
-            .padding(horizontal = 15.dp)
-            .verticalScroll(rememberScrollState())
-    ) {
-        Box(
+fun BookkeepingStoreAddress(){
+    Row(verticalAlignment = Alignment.CenterVertically) {
+        Image(
+            painterResource(id = R.drawable.ic_location_24),
+            contentDescription ="Store Location",
             modifier = Modifier
-                .size(200.dp)
-                .clip(RectangleShape)
-                .background(Color.LightGray)
+                .size(25.dp, 25.dp)
         )
-        SpacerVerticalXS()
-        Ueberschrift1(name = stringResource(id = R.string.haushaltsbuch))
+        SpacerHorizontalXS()
         Column {
-            BookkeepingItem()
-            BookkeepingItem()
-            BookkeepingItem()
+            Untertitel("[Supermarktname]")
+            Untertitel("[Straße Hausnummer - 12345 Stadt]")
+        }
+    }
+}
+
+@Composable
+fun BookkeepingDetailView() {
+    Column {
+        Box(
+            Modifier
+            .fillMaxWidth()
+            .size(170.dp)
+            .clip(RectangleShape)
+            .background(Color.LightGray)
+        )
+        Column(Modifier.padding(horizontal = 15.dp)) {
+            Ueberschrift1(stringResource(R.string.haushaltsbuch))
+            SpacerVerticalXS()
+            Row {
+                BookkeepingStoreAddress()
+                Spacer(Modifier.weight(1f))
+                Ueberschrift2("[XX,00] €")
+            }
+            SpacerVerticalXS()
+            Fliesstext("[Description]")
         }
     }
 }

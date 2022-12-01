@@ -14,6 +14,7 @@ const val WOISTDERNAECHTESUPERMARKTBESCHREIBUNG: String = "Gehe zu Wo ist der n√
 
 const val HAUSHALTSBUCH: String =  "Haushaltsbuch"
 const val HAUSHALTSBUCHBESCHREIBUNG: String =  "Gehe zu Haushaltsbuch"
+const val HAUSHALTSBUCH_DETAIL: String =  "Haushaltsbuch-Detail"
 
 const val EINSTELLUNGEN: String = "Einstellungen"
 const val EINSTELLUNGENBESCHREIBUNG: String = "Gehe zu Einstellungen"
