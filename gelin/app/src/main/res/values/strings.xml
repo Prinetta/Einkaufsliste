@@ -42,14 +42,6 @@
     <string name="anzahl">Anzahl</string>
     <string name="einheit">Einheit</string>
     <string name="produkthinzufuegen">Produkt hinzufügen</string>
-    <string name="mililiter">Mililiter</string>
-    <string name="liter">Liter</string>
-    <string name="gramm">Gramm</string>
-    <string name="kilogramm">Kilogramm</string>
-    <string name="stueck">Stück</string>
-    <string name="dosePackung">Dose/ Packung</string>
-    <string name="beutelSack">Beutel oder Sack</string>
-    <string name="flaschen">Flaschen</string>
     <string name="barcodeEinscannen">Bitte Scannen Sie das Produkt ab</string>
 
 
@@ -89,5 +81,24 @@
     <string name="title_activity_adding_products_after_usering_scanner">
         AddingProductsAfterUseringScanner
     </string>
+
+    <!--Lebensmittelkategorien-->
+    <string name="produce">Obst &amp; Gemüse</string>
+    <string name="dairy">Milchprodukte</string>
+    <string name="meat">Fleischprodukte</string>
+    <string name="grains">Getreide</string>
+    <string name="beverage">Getränke</string>
+    <string name="other">Sonstiges</string>
+
+    <!--Produkteinheiten-->
+    <string name="milliliter">Mililiter</string>
+    <string name="liter">Liter</string>
+    <string name="gram">Gramm</string>
+    <string name="kilogram">Kilogramm</string>
+    <string name="unit">Stück</string>
+    <string name="can">Dose</string>
+    <string name="pack">Packung</string>
+    <string name="sack">Sack</string>
+    <string name="bottle">Flaschen</string>
 
 </resources>
