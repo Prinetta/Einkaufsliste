@@ -1,9 +1,7 @@
 package de.mocows.gelin.view
 
 import androidx.compose.foundation.layout.*
-import androidx.compose.material.Button
-import androidx.compose.material.ButtonDefaults
-import androidx.compose.material.Text
+import androidx.compose.material.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -23,18 +21,13 @@ import de.mocows.gelin.view.gelinComposable.SpacerVerticalS
 
 private val groceryEntryService = GroceryEntryService()
 
-private var brand: String? = null
-private var category: ProductCategory? = null
-private var amount: Double? = null
-private var measureUnit: MeasureUnit? = null
-
 @Composable
 fun LebensmittelHinzufuegenManuell(){
     var name = remember { mutableStateOf(TextFieldValue()) }
     var brand = remember { mutableStateOf(TextFieldValue()) }
-    var category = remember { mutableStateOf(TextFieldValue()) }
+    var category = remember { mutableStateOf(ProductCategory.OTHER) }
     var amount = remember { mutableStateOf(TextFieldValue()) }
-    var measureUnit = remember { mutableStateOf(TextFieldValue()) }
+    var measureUnit = remember { mutableStateOf(MeasureUnit.UNIT) }
 
     Column {
         SpacerVerticalS()
@@ -46,28 +39,87 @@ fun LebensmittelHinzufuegenManuell(){
             modifier = Modifier.fillMaxWidth(),
             placeholder = stringResource(id = R.string.marke)
         )
-        category = InputFieldWithPrompt(
-            modifier = Modifier.fillMaxWidth(),
-            placeholder = stringResource(id = R.string.kategorie)
-        )
+
+        // TODO: create method for dropdown menu
+        // TODO: change UI of dropdown menu
+        var categoriesExpanded by remember { mutableStateOf(false) }
+        var categoryText by remember { mutableStateOf("Kategorie") }
+
+        Button(onClick = { categoriesExpanded = true },
+               modifier = Modifier
+                   .fillMaxWidth()
+                   .padding(10.dp)
+                   .height(56.dp)) {
+            Text(categoryText, modifier = Modifier.fillMaxWidth(), fontSize = 18.sp)
+            DropdownMenu(
+                expanded = categoriesExpanded,
+                onDismissRequest = { categoriesExpanded = false },
+                modifier = Modifier.fillMaxWidth()
+            ) {
+                for (productCategory in ProductCategory.values()) {
+                    val capitalizedName = productCategory.name
+                        .lowercase()
+                        .replaceFirstChar { it.uppercase() }
+
+                    DropdownMenuItem(onClick = {
+                        category.value = productCategory
+                        categoriesExpanded = false
+                        categoryText = capitalizedName
+                    }) {
+                        Text(capitalizedName)
+                    }
+                }
+            }
+        }
+
+
         Row {
             amount = InputFieldWithPrompt(
                 modifier = Modifier.weight(1f),
                 placeholder = stringResource(id = R.string.anzahl)
             )
-            measureUnit = InputFieldWithPrompt(
-                modifier = Modifier.weight(1f),
-                placeholder = stringResource(id = R.string.einheit)
-            )
+
+            var measureUnitsExpanded by remember { mutableStateOf(false) }
+            var measureUnitText by remember { mutableStateOf("Einheit") }
+
+            Button(onClick = { measureUnitsExpanded = true },
+                   modifier = Modifier
+                       .weight(1f)
+                       .fillMaxWidth()
+                       .padding(10.dp)
+                       .height(56.dp)) {
+                Text(measureUnitText, modifier = Modifier.fillMaxWidth(), fontSize = 18.sp)
+                DropdownMenu(
+                    expanded = measureUnitsExpanded,
+                    onDismissRequest = { measureUnitsExpanded = false }
+                ) {
+                    for (unit in MeasureUnit.values()) {
+                        // TODO: do not capitalize specific unit abbreviations like ml, g, kg...
+                        val capitalizedName = unit.name
+                            .lowercase()
+                            .replaceFirstChar { it.uppercase() }
+
+                        DropdownMenuItem(onClick = {
+                            measureUnit.value = unit
+                            measureUnitsExpanded = false
+                            measureUnitText = capitalizedName
+                        }) {
+                            Text(capitalizedName)
+                        }
+                    }
+                }
+            }
         }
+
         Button(
             onClick = { groceryEntryService.saveGroceryEntry(GroceryEntry(
                 Product(
                     name.value.text,
-                    brand.value.text,
-                    ProductCategory.valueOf(category.value.text)),
+                    brand.value.text.ifEmpty { null },
+                    category.value
+                ),
                 amount.value.text.toDouble(),
-                MeasureUnit.valueOf(measureUnit.value.text)
+                measureUnit.value
             )) },
             modifier = Modifier.fillMaxWidth().padding(10.dp),
             colors = ButtonDefaults.buttonColors(backgroundColor = brightgreen, contentColor = Color.White)
