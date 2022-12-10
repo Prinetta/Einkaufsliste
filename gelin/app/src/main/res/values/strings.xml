@@ -41,6 +41,7 @@
     <string name="marke">Marke</string>
     <string name="anzahl">Anzahl</string>
     <string name="einheit">Einheit</string>
+    <string name="kategorie">Kategorie</string>
     <string name="produkthinzufuegen">Produkt hinzufügen</string>
     <string name="barcodeEinscannen">Bitte Scannen Sie das Produkt ab</string>
 

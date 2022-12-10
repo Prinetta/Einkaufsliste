@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "97102970828",
+    "project_id": "gelin-29dcc",
+    "storage_bucket": "gelin-29dcc.appspot.com",
+    "firebase_url": "https://gelin-29dcc-default-rtdb.europe-west1.firebasedatabase.app/"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:97102970828:android:e23456c85de7df61d8a769",
+        "android_client_info": {
+          "package_name": "de.mocows.gelin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "97102970828-2eg9ik4cqot2ekc59mlkj3bvhjf7407o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCg36Up53QpYGQixyXHTSZq7-3oPB71TvM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "97102970828-2eg9ik4cqot2ekc59mlkj3bvhjf7407o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
