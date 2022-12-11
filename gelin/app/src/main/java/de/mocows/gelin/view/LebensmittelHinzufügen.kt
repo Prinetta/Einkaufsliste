@@ -10,7 +10,7 @@ import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import de.mocows.gelin.R
-import de.mocows.gelin.model.GroceryEntryService
+import de.mocows.gelin.model.groceryentry.GroceryEntryService
 import de.mocows.gelin.model.groceryentry.GroceryEntry
 import de.mocows.gelin.model.groceryentry.MeasureUnit
 import de.mocows.gelin.model.product.Product
@@ -22,6 +22,8 @@ import de.mocows.gelin.view.gelinComposable.SpacerVerticalS
 
 private val groceryEntryService = GroceryEntryService()
 
+// TODO: suggest product with auto completion
+// TODO: display dropdown names in german
 @Composable
 fun LebensmittelHinzufuegenManuell(){
     var name: MutableState<TextFieldValue>
