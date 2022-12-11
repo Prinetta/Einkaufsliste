@@ -16,6 +16,7 @@ import de.mocows.gelin.model.groceryentry.MeasureUnit
 import de.mocows.gelin.model.product.Product
 import de.mocows.gelin.model.product.ProductCategory
 import de.mocows.gelin.ui.userinterface.ui.theme.brightgreen
+import de.mocows.gelin.view.gelinComposable.EnumDropdown
 import de.mocows.gelin.view.gelinComposable.InputFieldWithPrompt
 import de.mocows.gelin.view.gelinComposable.SpacerVerticalS
 
@@ -23,9 +24,9 @@ private val groceryEntryService = GroceryEntryService()
 
 @Composable
 fun LebensmittelHinzufuegenManuell(){
-    var name = remember { mutableStateOf(TextFieldValue()) }
-    var brand = remember { mutableStateOf(TextFieldValue()) }
-    var category = remember { mutableStateOf(ProductCategory.OTHER) }
+    var name: MutableState<TextFieldValue>
+    var brand: MutableState<TextFieldValue>
+    var category: MutableState<ProductCategory>
     var amount = remember { mutableStateOf(TextFieldValue()) }
     var measureUnit = remember { mutableStateOf(MeasureUnit.UNIT) }
 
@@ -39,38 +40,7 @@ fun LebensmittelHinzufuegenManuell(){
             modifier = Modifier.fillMaxWidth(),
             placeholder = stringResource(id = R.string.marke)
         )
-
-        // TODO: create method for dropdown menu
-        // TODO: change UI of dropdown menu
-        var categoriesExpanded by remember { mutableStateOf(false) }
-        var categoryText by remember { mutableStateOf("Kategorie") }
-
-        Button(onClick = { categoriesExpanded = true },
-               modifier = Modifier
-                   .fillMaxWidth()
-                   .padding(10.dp)
-                   .height(56.dp)) {
-            Text(categoryText, modifier = Modifier.fillMaxWidth(), fontSize = 18.sp)
-            DropdownMenu(
-                expanded = categoriesExpanded,
-                onDismissRequest = { categoriesExpanded = false },
-                modifier = Modifier.fillMaxWidth()
-            ) {
-                for (productCategory in ProductCategory.values()) {
-                    val capitalizedName = productCategory.name
-                        .lowercase()
-                        .replaceFirstChar { it.uppercase() }
-
-                    DropdownMenuItem(onClick = {
-                        category.value = productCategory
-                        categoriesExpanded = false
-                        categoryText = capitalizedName
-                    }) {
-                        Text(capitalizedName)
-                    }
-                }
-            }
-        }
+        category = EnumDropdown("Kategorie")
 
 
         Row {
@@ -78,37 +48,7 @@ fun LebensmittelHinzufuegenManuell(){
                 modifier = Modifier.weight(1f),
                 placeholder = stringResource(id = R.string.anzahl)
             )
-
-            var measureUnitsExpanded by remember { mutableStateOf(false) }
-            var measureUnitText by remember { mutableStateOf("Einheit") }
-
-            Button(onClick = { measureUnitsExpanded = true },
-                   modifier = Modifier
-                       .weight(1f)
-                       .fillMaxWidth()
-                       .padding(10.dp)
-                       .height(56.dp)) {
-                Text(measureUnitText, modifier = Modifier.fillMaxWidth(), fontSize = 18.sp)
-                DropdownMenu(
-                    expanded = measureUnitsExpanded,
-                    onDismissRequest = { measureUnitsExpanded = false }
-                ) {
-                    for (unit in MeasureUnit.values()) {
-                        // TODO: do not capitalize specific unit abbreviations like ml, g, kg...
-                        val capitalizedName = unit.name
-                            .lowercase()
-                            .replaceFirstChar { it.uppercase() }
-
-                        DropdownMenuItem(onClick = {
-                            measureUnit.value = unit
-                            measureUnitsExpanded = false
-                            measureUnitText = capitalizedName
-                        }) {
-                            Text(capitalizedName)
-                        }
-                    }
-                }
-            }
+            measureUnit = EnumDropdown("Einheit", modifier = Modifier.weight(1f))
         }
 
         Button(
