@@ -1,4 +1,4 @@
-package de.moco.gelin.view
+package de.moco.gelin.view.screen
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
@@ -10,13 +10,15 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import de.moco.gelin.view.gelinComposable.*
-import de.moco.gelin.view.gelinComposable.Dataclasses.*
 import de.moco.gelin.R
+import de.moco.gelin.view.gelincomposable.BackgroundPic
+import de.moco.gelin.view.gelincomposable.SpacerHorizontalM
+import de.moco.gelin.view.gelincomposable.Ueberschrift3
+import de.moco.gelin.view.gelincomposable.dataclass.*
 
 
 @Composable
-fun UserProfil() {
+fun UserProfileView() {
     BackgroundPic()
      Column(
          modifier = Modifier
@@ -95,8 +97,8 @@ fun StiftFuerBearbeiten(modifier: Modifier) {
 
 @Preview
 @Composable
-fun UserProfilPreview(){
-    UserProfil()
+fun UserProfilePreview(){
+    UserProfileView()
 }
 
 

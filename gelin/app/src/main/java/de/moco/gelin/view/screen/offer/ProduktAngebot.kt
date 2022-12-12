@@ -1,4 +1,4 @@
-package de.moco.gelin.view.gelinComposable.Dataclasses
+package de.moco.gelin.view.screen.offer
 
 data class ProduktAngebot(
     var produktName: String,

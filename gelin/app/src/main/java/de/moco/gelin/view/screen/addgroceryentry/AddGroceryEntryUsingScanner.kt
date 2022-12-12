@@ -1,4 +1,4 @@
-package de.moco.gelin.view
+package de.moco.gelin.view.screen.addgroceryentry
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Button
@@ -13,11 +13,11 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import de.moco.gelin.R
 import de.moco.gelin.ui.userinterface.ui.theme.brightgreen
-import de.moco.gelin.view.gelinComposable.*
-import de.moco.gelin.view.gelinComposable.Dataclasses.PRODUKTHINZUFUEGEN
+import de.moco.gelin.view.gelincomposable.*
+import de.moco.gelin.view.gelincomposable.dataclass.PRODUKTHINZUFUEGEN
 
 @Composable
-fun AddingProductsUseingScanner(){
+fun AddGroceryEntryUsingScannerView(){
     Column (
         modifier = Modifier
             .padding(15.dp)
@@ -62,5 +62,5 @@ fun AddingProductsUseingScanner(){
 @Preview
 @Composable
 fun AddingProductsUseingScannerPV(){
-    AddingProductsUseingScanner()
+    AddGroceryEntryUsingScannerView()
 }

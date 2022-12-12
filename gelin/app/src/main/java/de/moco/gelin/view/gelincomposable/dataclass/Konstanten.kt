@@ -1,4 +1,4 @@
-package de.moco.gelin.view.gelinComposable.Dataclasses
+package de.moco.gelin.view.gelincomposable.dataclass
 
 const val PRODUKTHINZUFUEGEN: String = "Produkt hinzufügen"
 const val EINKAUFSLISTE: String = "Einkaufsliste"

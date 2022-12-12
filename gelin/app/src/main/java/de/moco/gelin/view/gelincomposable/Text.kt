@@ -1,4 +1,4 @@
-package de.moco.gelin.view.gelinComposable
+package de.moco.gelin.view.gelincomposable
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column

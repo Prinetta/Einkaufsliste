@@ -1,4 +1,4 @@
-package de.moco.gelin.view
+package de.moco.gelin.view.screen.grocerylist
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -17,13 +17,12 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import de.moco.gelin.R
-import de.moco.gelin.view.gelinComposable.*
-import de.moco.gelin.view.gelinComposable.Dataclasses.EINKAUFSLISTE
-import de.moco.gelin.view.gelinComposable.Dataclasses.PRODUKTHINZUFUEGEN
+import de.moco.gelin.view.gelincomposable.*
+import de.moco.gelin.view.gelincomposable.dataclass.EINKAUFSLISTE
+import de.moco.gelin.view.gelincomposable.dataclass.PRODUKTHINZUFUEGEN
 
 @Composable
-fun EinkaufslisteView(navController: NavHostController) {
-
+fun GroceryListView(navController: NavHostController) {
     Column(
         modifier = Modifier
             .padding(horizontal = 15.dp)
@@ -35,12 +34,12 @@ fun EinkaufslisteView(navController: NavHostController) {
             modifier = Modifier
                 .padding(vertical = 10.dp)
         ) {// add groceries
-            LebensmittelHinzufuegenButton(navController)
+            AddGroceryEntryButton(navController)
         }
         Ueberschrift1(name = stringResource(id = R.string.einkaufsliste))
-        CardViewCategory(stringResource(R.string.obstUndGemuese), R.color.lightgreen)
-        CardViewCategory(stringResource(R.string.milchprodukte), R.color.lightyellow)
-        CardViewCategory(stringResource(R.string.fleischprodukte), R.color.pastellred)
+        CategoryCard(stringResource(R.string.obstUndGemuese), R.color.lightgreen)
+        CategoryCard(stringResource(R.string.milchprodukte), R.color.lightyellow)
+        CategoryCard(stringResource(R.string.fleischprodukte), R.color.pastellred)
     }
 }
 
@@ -51,12 +50,12 @@ fun BudgetView() {
         SpacerHorizontalXL()
         Ueberschrift2(name = "[XX,00] €")
         Spacer(Modifier.weight(1f))
-        BearbeitenIconButton()
+        EditBudgetIcon()
     }
 }
 
 @Composable
-fun CardViewCategory(categoryTitle: String, categoryColorId: Int) {
+fun CategoryCard(categoryTitle: String, categoryColorId: Int) {
     Card(
         modifier = Modifier
             .background(colorResource(id = R.color.white))
@@ -72,15 +71,15 @@ fun CardViewCategory(categoryTitle: String, categoryColorId: Int) {
             Box(modifier = Modifier.padding(horizontal = 5.dp)){
                 Ueberschrift3(categoryTitle)
             }
-            //Das soll eine Liste werden
-            EinkaufsItemView(categoryColorId)
-            EinkaufsItemView(categoryColorId)
+            //TODO: show list
+            GroceryEntryItem(categoryColorId)
+            GroceryEntryItem(categoryColorId)
         }
     }
 }
 
 @Composable
-fun BearbeitenIconButton(){
+fun EditBudgetIcon(){
     Button(
         colors = ButtonDefaults.textButtonColors(
                 backgroundColor = colorResource(id = R.color.white),
@@ -95,7 +94,7 @@ fun BearbeitenIconButton(){
     }
 }
 @Composable
-fun LebensmittelHinzufuegenButton(navController: NavHostController) {
+fun AddGroceryEntryButton(navController: NavHostController) {
     Button(
         modifier = Modifier
             .fillMaxWidth(1f),

@@ -1,4 +1,4 @@
-package de.moco.gelin.view
+package de.moco.gelin.view.screen.registration
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -9,11 +9,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import de.moco.gelin.view.gelinComposable.*
 import de.moco.gelin.R
+import de.moco.gelin.view.gelincomposable.*
 
 @Composable
-fun RegistrierungsView(){
+fun RegistrationView(){
     Column(
         modifier = Modifier
             .background(colorResource(id = R.color.darkgreen))
@@ -21,12 +21,12 @@ fun RegistrierungsView(){
 
         ) {
         LogoImage()
-        CardViewRegistierung()
+        CardViewRegistration()
     }
 }
 
 @Composable
-fun CardViewRegistierung() {
+fun CardViewRegistration() {
     Card(
         modifier = Modifier
             .fillMaxWidth()
@@ -41,13 +41,13 @@ fun CardViewRegistierung() {
             InputFieldOhneEingabeText(stringResource(id = R.string.username))
             InputFieldMitEingabeText(stringResource(id = R.string.passwort))
             InputFieldMitEingabeText(stringResource(id = R.string.passwortBestaetigen))
-            RegistrierungsButton()
+            RegisterButton()
         }
     }
 }
 
 @Composable
-fun RegistrierungsButton() {
+fun RegisterButton() {
     androidx.compose.material.Button(onClick = { /* Do something! */ },
         colors = ButtonDefaults.textButtonColors(
             backgroundColor = colorResource(id = R.color.darkgreen)

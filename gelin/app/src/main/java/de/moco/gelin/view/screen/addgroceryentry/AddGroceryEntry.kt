@@ -1,4 +1,4 @@
-package de.moco.gelin.view
+package de.moco.gelin.view.screen
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -24,16 +24,16 @@ import de.moco.gelin.model.groceryentry.MeasureUnit
 import de.moco.gelin.model.product.Product
 import de.moco.gelin.model.product.ProductCategory
 import de.moco.gelin.ui.userinterface.ui.theme.brightgreen
-import de.moco.gelin.view.gelinComposable.EnumDropdown
-import de.moco.gelin.view.gelinComposable.InputFieldWithPrompt
-import de.moco.gelin.view.gelinComposable.SpacerVerticalS
+import de.moco.gelin.view.gelincomposable.EnumDropdown
+import de.moco.gelin.view.gelincomposable.InputFieldWithPrompt
+import de.moco.gelin.view.gelincomposable.SpacerVerticalS
 
 private val groceryEntryService = GroceryEntryService()
 
 // TODO: suggest product with auto completion
 // TODO: display dropdown names in german
 @Composable
-fun LebensmittelHinzufuegenManuell(){
+fun AddGroceryEntryView(){
     var name: MutableState<TextFieldValue>
     var brand: MutableState<TextFieldValue>
     var category: MutableState<ProductCategory>

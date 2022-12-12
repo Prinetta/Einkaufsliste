@@ -1,4 +1,4 @@
-package de.moco.gelin.view.gelinComposable
+package de.moco.gelin.view.gelincomposable
 
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height

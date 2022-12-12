@@ -1,4 +1,4 @@
-package de.moco.gelin.view.gelinComposable
+package de.moco.gelin.view.gelincomposable
 
 
 import androidx.compose.foundation.background
@@ -15,12 +15,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.unit.dp
 
-/*Wem was besseres einfällt dars es Refactorn.
-Hier ist das ein Lebensmittel gemein,
-welches auf der Einkaufsliste stehen*/
-
 @Composable
-fun EinkaufsItemView(categoryColorId: Int){
+fun GroceryEntryItem(categoryColorId: Int){
     Card(
         modifier = Modifier
             .fillMaxWidth()
@@ -32,7 +28,7 @@ fun EinkaufsItemView(categoryColorId: Int){
                 .background(colorResource(id = categoryColorId)),
             verticalAlignment = Alignment.CenterVertically
         ){
-            GekauftCheckbox()
+            BoughtCheckbox()
             SpacerHorizontalXS()
             //Hier kommt die Zahl aus der Datenbank üebr die Menge an
             Fliesstext(name = "[Z]")
@@ -49,7 +45,7 @@ fun EinkaufsItemView(categoryColorId: Int){
 
 
 @Composable
-fun GekauftCheckbox() {
+fun BoughtCheckbox() {
     val checkedState = remember { mutableStateOf(false) }
     Checkbox(
         checked = checkedState.value,

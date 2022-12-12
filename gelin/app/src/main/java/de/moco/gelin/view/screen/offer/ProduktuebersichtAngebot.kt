@@ -1,4 +1,4 @@
-package de.moco.gelin.view.gelinComposable
+package de.moco.gelin.view.gelincomposable
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.border
@@ -17,11 +17,11 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import de.moco.gelin.R
-import de.moco.gelin.view.angebot
-import de.moco.gelin.view.gelinComposable.Dataclasses.ProduktAngebot
+import de.moco.gelin.view.screen.angebot
+import de.moco.gelin.view.screen.offer.ProduktAngebot
 
 @Composable
-fun ProduktAnzeigeAngebot() {
+fun OfferListView() {
     val items by remember {
         mutableStateOf(
             (1..20).map {

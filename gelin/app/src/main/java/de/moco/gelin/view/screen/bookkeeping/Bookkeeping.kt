@@ -1,4 +1,4 @@
-package de.moco.gelin.view
+package de.moco.gelin.view.screen
 
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
@@ -14,9 +14,9 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import de.moco.gelin.R
-import de.moco.gelin.view.gelinComposable.*
-import de.moco.gelin.view.gelinComposable.Dataclasses.HAUSHALTSBUCH_DETAIL
-import de.moco.gelin.view.gelinComposable.Dataclasses.NavDrawerItem
+import de.moco.gelin.view.gelincomposable.*
+import de.moco.gelin.view.gelincomposable.dataclass.HAUSHALTSBUCH_DETAIL
+import de.moco.gelin.view.gelincomposable.dataclass.NavDrawerItem
 
 @Composable
 fun BookkeepingView(navController: NavHostController) {
@@ -42,7 +42,7 @@ fun BookkeepingItem(navController: NavHostController) {
         .fillMaxWidth()
         .clickable {
             navController.navigate(HAUSHALTSBUCH_DETAIL){
-                popUpTo(NavDrawerItem.Haushaltsbuch.route){ inclusive = true }
+                popUpTo(NavDrawerItem.Bookkeeping.route){ inclusive = true }
             }
         },
         elevation = 10.dp){
