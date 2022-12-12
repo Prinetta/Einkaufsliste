@@ -43,6 +43,13 @@ fun SpacerHorizontalXL(){
 }
 
 @Composable
+fun SpacerHorizontalXXL(){
+    Spacer(modifier = Modifier
+        .width(100.dp)
+    )
+}
+
+@Composable
 fun SpacerVerticalXS(){
     Spacer(modifier = Modifier
         .height(10.dp)

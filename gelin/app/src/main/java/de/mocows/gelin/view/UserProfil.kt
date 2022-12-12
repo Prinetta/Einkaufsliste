@@ -1,12 +1,14 @@
 package de.mocows.gelin.view
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -14,14 +16,15 @@ import de.mocows.gelin.R
 import de.mocows.gelin.view.gelinComposable.*
 import de.mocows.gelin.view.gelinComposable.Dataclasses.*
 
+
 @Composable
-fun UserProfil( ) {
+fun UserProfil() {
+    BackgroundPic()
      Column(
-        modifier = Modifier
-            .fillMaxWidth()
-            .fillMaxHeight()
-            .padding(5.dp)) {
-        SpacerHorizontalS()
+         modifier = Modifier
+             .fillMaxWidth()
+             .fillMaxHeight()
+             ) {
         Row(modifier = Modifier
             .fillMaxWidth()
             .padding(5.dp), Arrangement.SpaceBetween,
@@ -84,6 +87,8 @@ fun UserProfil( ) {
          }
     }
 }
+
+
 
 @Composable
 fun StiftFuerBearbeiten(modifier: Modifier) {
