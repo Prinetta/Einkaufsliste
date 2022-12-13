@@ -4,19 +4,21 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.Card
+import androidx.compose.material.darkColors
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.style.TextDrawStyle.Unspecified.color
 import androidx.compose.ui.unit.dp
-import de.moco.gelin.R
 import de.moco.gelin.view.gelincomposable.*
+import de.moco.gelin.ui.theme.darkgreen as darkgreen
 
 @Composable
 fun RegistrationView(){
     Column(
         modifier = Modifier
-            .background(colorResource(id = R.color.darkgreen))
+            .background(color = darkgreen)
             .fillMaxSize(),
 
         ) {
@@ -50,7 +52,7 @@ fun CardViewRegistration() {
 fun RegisterButton() {
     androidx.compose.material.Button(onClick = { /* Do something! */ },
         colors = ButtonDefaults.textButtonColors(
-            backgroundColor = colorResource(id = R.color.darkgreen)
+           backgroundColor = darkgreen
         ),
         modifier = Modifier.fillMaxWidth(1f)
             .fillMaxHeight(2f)
