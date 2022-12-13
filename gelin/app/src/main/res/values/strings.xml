@@ -101,5 +101,6 @@
     <string name="pack">Packung</string>
     <string name="sack">Sack</string>
     <string name="bottle">Flaschen</string>
+    <string name="title_activity_main2">MainActivity2</string>
 
 </resources>
