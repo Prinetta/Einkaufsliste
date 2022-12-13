@@ -4,14 +4,14 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.Card
-import androidx.compose.material.darkColors
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.colorResource
-import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.style.TextDrawStyle.Unspecified.color
 import androidx.compose.ui.unit.dp
 import de.moco.gelin.view.gelincomposable.*
+import de.moco.gelin.view.gelincomposable.dataclass.NAME
+import de.moco.gelin.view.gelincomposable.dataclass.PASSWORD
+import de.moco.gelin.view.gelincomposable.dataclass.REGISTIERUNG
+import de.moco.gelin.view.gelincomposable.dataclass.USERBEISPIELNAME
 import de.moco.gelin.ui.theme.darkgreen as darkgreen
 
 @Composable
@@ -37,13 +37,13 @@ fun CardViewRegistration() {
         Column(
             modifier = Modifier.padding(15.dp)
         ) {
-            Ueberschrift1(stringResource(id = R.string.registrieren))
-            Fliesstext(stringResource(id =  R.string.begrueßungsTextRegistrierung))
-            InputFieldOhneEingabeText(stringResource(id = R.string.name))
-            InputFieldOhneEingabeText(stringResource(id = R.string.username))
-            InputFieldMitEingabeText(stringResource(id = R.string.passwort))
-            InputFieldMitEingabeText(stringResource(id = R.string.passwortBestaetigen))
-            RegisterButton()
+            Ueberschrift1(REGISTIERUNG)
+            Fliesstext()
+            InputFieldOhneEingabeText(NAME)
+            InputFieldOhneEingabeText(USERBEISPIELNAME)
+            InputFieldMitEingabeText(PASSWORD)
+            InputFieldMitEingabeText(PASSWORTBESTAETIGEN)
+            RegisterButton(REGISTIERUNG)
         }
     }
 }
@@ -54,10 +54,11 @@ fun RegisterButton() {
         colors = ButtonDefaults.textButtonColors(
            backgroundColor = darkgreen
         ),
-        modifier = Modifier.fillMaxWidth(1f)
+        modifier = Modifier
+            .fillMaxWidth(1f)
             .fillMaxHeight(2f)
     ) {
-        Fliesstext(stringResource(id = R.string.registrieren))
+        Fliesstext(REGISTIERUNG)
     }
 }
 
