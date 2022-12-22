@@ -8,10 +8,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import de.moco.gelin.view.gelincomposable.*
-import de.moco.gelin.view.gelincomposable.dataclass.NAME
-import de.moco.gelin.view.gelincomposable.dataclass.PASSWORD
-import de.moco.gelin.view.gelincomposable.dataclass.REGISTIERUNG
-import de.moco.gelin.view.gelincomposable.dataclass.USERBEISPIELNAME
+import de.moco.gelin.view.gelincomposable.dataclass.*
 import de.moco.gelin.ui.theme.darkgreen as darkgreen
 
 @Composable
@@ -38,12 +35,12 @@ fun CardViewRegistration() {
             modifier = Modifier.padding(15.dp)
         ) {
             Ueberschrift1(REGISTIERUNG)
-            Fliesstext()
+            Fliesstext("")
             InputFieldOhneEingabeText(NAME)
             InputFieldOhneEingabeText(USERBEISPIELNAME)
             InputFieldMitEingabeText(PASSWORD)
             InputFieldMitEingabeText(PASSWORTBESTAETIGEN)
-            RegisterButton(REGISTIERUNG)
+            RegisterButton()
         }
     }
 }
