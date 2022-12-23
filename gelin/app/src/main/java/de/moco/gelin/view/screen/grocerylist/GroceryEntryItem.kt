@@ -14,9 +14,10 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.unit.dp
+import de.moco.gelin.model.groceryentry.GroceryEntry
 
 @Composable
-fun GroceryEntryItem(categoryColorId: Int){
+fun GroceryEntryItem(groceryEntry: GroceryEntry, categoryColorId: Int){
     Card(
         modifier = Modifier
             .fillMaxWidth()
@@ -29,15 +30,15 @@ fun GroceryEntryItem(categoryColorId: Int){
             verticalAlignment = Alignment.CenterVertically
         ){
             BoughtCheckbox()
+
             SpacerHorizontalXS()
-            //Hier kommt die Zahl aus der Datenbank üebr die Menge an
-            Fliesstext(name = "[Z]")
+            Fliesstext(name = groceryEntry.product.name)
+
             SpacerHorizontalXS()
-            //Hier kommt die Einheit aus der Datenbank hin
-            Fliesstext(name = "[Einheit]")
+            Fliesstext(name = groceryEntry.amount.toString())
+
             SpacerHorizontalXS()
-            //Hier kommt die Ware aus der Datenbank hin
-            Fliesstext(name = "[Lebensmittel]")
+            Fliesstext(name = groceryEntry.unit.name)
         }
     }
 
