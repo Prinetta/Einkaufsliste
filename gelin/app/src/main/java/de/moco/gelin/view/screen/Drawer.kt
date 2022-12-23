@@ -88,7 +88,7 @@ fun Drawer(scope: CoroutineScope, scaffoldState: ScaffoldState, navController: N
 
 @Composable
 fun DrawerItem(item: NavDrawerItem, selected: Boolean, onItemClick: (NavDrawerItem) -> Unit) {
-    val background = if (selected) R.color.brightgreen else android.R.color.transparent
+    val background = if (selected) R.color.lightgreen else android.R.color.transparent
     Row(
         verticalAlignment = Alignment.CenterVertically,
         modifier = Modifier

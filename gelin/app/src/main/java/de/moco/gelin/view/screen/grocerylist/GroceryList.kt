@@ -9,29 +9,29 @@ import androidx.compose.material.Button
 import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.Card
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
-import com.google.firebase.database.ValueEventListener
 import de.moco.gelin.R
-import de.moco.gelin.model.groceryEntryService
 import de.moco.gelin.model.groceryentry.GroceryEntry
 import de.moco.gelin.model.product.ProductCategory
 import de.moco.gelin.view.gelincomposable.*
 import de.moco.gelin.view.gelincomposable.dataclass.EINKAUFSLISTE
 import de.moco.gelin.view.gelincomposable.dataclass.PRODUKTHINZUFUEGEN
+import de.moco.gelin.viewmodel.GroceryEntryViewModel
 
-// TODO: use grocery entry view model
 @Composable
-fun GroceryListView(navController: NavHostController) {
+fun GroceryListView(navController: NavHostController, viewModel: GroceryEntryViewModel = viewModel()) {
+    val groceryEntries by viewModel.groceryEntryList.observeAsState(emptyList())
+
     Column(
         modifier = Modifier
             .padding(horizontal = 15.dp)
@@ -43,12 +43,10 @@ fun GroceryListView(navController: NavHostController) {
             AddGroceryEntryButton(navController)
         }
         Ueberschrift1(name = stringResource(id = R.string.einkaufsliste))
-        CategoryCard(ProductCategory.PRODUCE, stringResource(R.string.produce), R.color.lightgreen)
-        CategoryCard(ProductCategory.DAIRY, stringResource(R.string.dairy), R.color.lightyellow)
-        CategoryCard(ProductCategory.MEAT, stringResource(R.string.meat), R.color.pastellred)
-        CategoryCard(ProductCategory.GRAINS, stringResource(R.string.grains), R.color.pastellred)
-        CategoryCard(ProductCategory.BEVERAGE, stringResource(R.string.beverage), R.color.pastellred)
-        CategoryCard(ProductCategory.OTHER, stringResource(R.string.other), R.color.pastellred)
+
+        ProductCategory.values().forEach {
+            CategoryCard(it, groceryEntries, viewModel)
+        }
     }
 }
 
@@ -62,9 +60,16 @@ fun BudgetView() {
         EditBudgetIcon()
     }
 }
-// TODO: read categoryTitle from category automatically
+
 @Composable
-fun CategoryCard(category: ProductCategory, categoryTitle: String, categoryColorId: Int) {
+fun CategoryCard(
+    category: ProductCategory,
+    groceryEntries: List<GroceryEntry>,
+    viewModel: GroceryEntryViewModel
+) {
+    val categoryTitle = viewModel.categoryTitle(category)
+    val categoryColor = viewModel.categoryColor(category)
+
     Card(
         modifier = Modifier
             .background(colorResource(id = R.color.white))
@@ -73,34 +78,16 @@ fun CategoryCard(category: ProductCategory, categoryTitle: String, categoryColor
     ) {
         Column(
             modifier = Modifier
-                .background(colorResource(id = categoryColorId))
+                .background(categoryColor)
                 .padding(5.dp)
 
         ) {
             Box(modifier = Modifier.padding(horizontal = 5.dp)) {
                 Ueberschrift3(categoryTitle)
             }
-            //TODO: show list
-            val groceriesInCategory = remember { mutableStateOf(listOf<GroceryEntry>()) }
-            groceryEntryService.addValueEventListener(object : ValueEventListener {
-                override fun onDataChange(dataSnapshot: DataSnapshot) {
-                    for (child in dataSnapshot.children) {
-                        val groceryEntry = child.getValue(GroceryEntry::class.java)
-                        if (groceryEntry is GroceryEntry
-                            && groceryEntry !in groceriesInCategory.value
-                            && groceryEntry.product.category == category) {
-                            groceriesInCategory.value += groceryEntry
-                        }
-                    }
-                }
 
-                override fun onCancelled(databaseError: DatabaseError) {
-                    throw IllegalStateException("Failed with error: ${databaseError.code}")
-                }
-            })
-
-            for (groceryEntry in groceriesInCategory.value) {
-                GroceryEntryItem(groceryEntry, categoryColorId)
+            groceryEntries.filter { it.product.category == category }.forEach {
+                GroceryEntryItem(it, categoryColor, viewModel)
             }
         }
     }

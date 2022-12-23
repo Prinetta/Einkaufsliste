@@ -1,5 +1,6 @@
 package de.moco.gelin.model.groceryentry
 
+import com.google.firebase.database.ChildEventListener
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.ValueEventListener
 import de.moco.gelin.model.database
@@ -13,4 +14,7 @@ class GroceryEntryService {
 
     fun addValueEventListener(listener: ValueEventListener) =
         groceryEntriesRef.addValueEventListener(listener)
+
+    fun addChildEventListener(listener: ChildEventListener) =
+        groceryEntriesRef.addChildEventListener(listener)
 }

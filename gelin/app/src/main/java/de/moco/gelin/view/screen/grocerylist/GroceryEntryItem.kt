@@ -1,4 +1,4 @@
-package de.moco.gelin.view.gelincomposable
+package de.moco.gelin.view.screen.grocerylist
 
 
 import androidx.compose.foundation.background
@@ -12,12 +12,15 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.colorResource
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import de.moco.gelin.model.groceryentry.GroceryEntry
+import de.moco.gelin.view.gelincomposable.Fliesstext
+import de.moco.gelin.view.gelincomposable.SpacerHorizontalXS
+import de.moco.gelin.viewmodel.GroceryEntryViewModel
 
 @Composable
-fun GroceryEntryItem(groceryEntry: GroceryEntry, categoryColorId: Int){
+fun GroceryEntryItem(groceryEntry: GroceryEntry, categoryColor: Color, viewModel: GroceryEntryViewModel) {
     Card(
         modifier = Modifier
             .fillMaxWidth()
@@ -25,8 +28,7 @@ fun GroceryEntryItem(groceryEntry: GroceryEntry, categoryColorId: Int){
         elevation = 10.dp
     ) {
         Row (
-            modifier = Modifier
-                .background(colorResource(id = categoryColorId)),
+            modifier = Modifier.background(categoryColor),
             verticalAlignment = Alignment.CenterVertically
         ){
             BoughtCheckbox()
@@ -38,7 +40,7 @@ fun GroceryEntryItem(groceryEntry: GroceryEntry, categoryColorId: Int){
             Fliesstext(name = groceryEntry.amount.toString())
 
             SpacerHorizontalXS()
-            Fliesstext(name = groceryEntry.unit.name)
+            Fliesstext(name = viewModel.unitDisplayName(groceryEntry.unit))
         }
     }
 

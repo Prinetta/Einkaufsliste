@@ -2,19 +2,20 @@
 <resources>
 
     <color name="darkgreen">#1A8300</color>
-    <color name="brightgreen">#2E9E12</color>
-    <color name="mediumgrey">#D9D9D9</color>
-    <color name="brightgray">#A2A2A2</color>
+    <color name="lightgreen">#2E9E12</color>
+    <color name="mediumgray">#D9D9D9</color>
+    <color name="lightgray">#A2A2A2</color>
     <color name="darkgray">#626262</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
     <!--Weitere Farben Einkaufsliste-->
-    <color name="lightgreen">#BEFFC9</color>
-    <color name="lightyellow">#FEFFBE</color>
-    <color name="pastellred">#FFBEBE</color>
-    <color name="pastellorange">#FFE27A</color>
-    <color name="pastellblau">#80DEEA</color>
+    <color name="pastelgreen">#BEFFC9</color>
+    <color name="pastelyellow">#FEFFBE</color>
+    <color name="pastelred">#F8D7D7</color>
+    <color name="pastelorange">#FFE27A</color>
+    <color name="pastelblue">#B2FDFD</color>
+    <color name="pastelpurple">#D2BDF8</color>
     <color name="light_blue_400">#FF29B6F6</color>
     <color name="light_blue_600">#FF039BE5</color>
     <color name="gray_400">#FFBDBDBD</color>
