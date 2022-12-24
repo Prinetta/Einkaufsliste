@@ -8,6 +8,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
 @Composable
+fun SpacerHorizontalXXS(){
+    Spacer(modifier = Modifier
+        .width(5.dp)
+    )
+}
+
+@Composable
 fun SpacerHorizontalXS(){
     Spacer(modifier = Modifier
         .width(10.dp)

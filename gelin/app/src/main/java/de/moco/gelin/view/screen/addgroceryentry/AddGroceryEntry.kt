@@ -17,6 +17,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import de.moco.gelin.R
 import de.moco.gelin.model.groceryentry.GroceryEntry
 import de.moco.gelin.model.groceryentry.GroceryEntryService
@@ -27,13 +28,14 @@ import de.moco.gelin.ui.userinterface.ui.theme.brightgreen
 import de.moco.gelin.view.gelincomposable.EnumDropdown
 import de.moco.gelin.view.gelincomposable.InputFieldWithPrompt
 import de.moco.gelin.view.gelincomposable.SpacerVerticalS
+import de.moco.gelin.viewmodel.GroceryEntryViewModel
 
 private val groceryEntryService = GroceryEntryService()
 
 // TODO: suggest product with auto completion
-// TODO: display dropdown names in german
+// GroceryEntryViewModel gets autowired instead of passed from GroceryListView, not ideal but should be ok
 @Composable
-fun AddGroceryEntryView(){
+fun AddGroceryEntryView(viewModel: GroceryEntryViewModel = viewModel()) {
     var name: MutableState<TextFieldValue>
     var brand: MutableState<TextFieldValue>
     var category: MutableState<ProductCategory>
@@ -50,7 +52,7 @@ fun AddGroceryEntryView(){
             modifier = Modifier.fillMaxWidth(),
             placeholder = stringResource(id = R.string.marke)
         )
-        category = EnumDropdown("Kategorie")
+        category = EnumDropdown("Kategorie", mapToString = { viewModel.categoryTitle(it) })
 
 
         Row {
@@ -58,7 +60,11 @@ fun AddGroceryEntryView(){
                 modifier = Modifier.weight(1f),
                 placeholder = stringResource(id = R.string.anzahl)
             )
-            measureUnit = EnumDropdown("Einheit", modifier = Modifier.weight(1f))
+            measureUnit = EnumDropdown(
+                "Einheit",
+                mapToString = { viewModel.unitDisplayName(it) },
+                modifier = Modifier.weight(1f)
+            )
         }
 
         Button(

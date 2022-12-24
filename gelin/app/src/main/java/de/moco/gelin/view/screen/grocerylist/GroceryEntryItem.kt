@@ -17,6 +17,7 @@ import androidx.compose.ui.unit.dp
 import de.moco.gelin.model.groceryentry.GroceryEntry
 import de.moco.gelin.view.gelincomposable.Fliesstext
 import de.moco.gelin.view.gelincomposable.SpacerHorizontalXS
+import de.moco.gelin.view.gelincomposable.SpacerHorizontalXXS
 import de.moco.gelin.viewmodel.GroceryEntryViewModel
 
 @Composable
@@ -37,15 +38,19 @@ fun GroceryEntryItem(groceryEntry: GroceryEntry, categoryColor: Color, viewModel
             Fliesstext(name = groceryEntry.product.name)
 
             SpacerHorizontalXS()
-            Fliesstext(name = groceryEntry.amount.toString())
+            Fliesstext(name = shortDoubleString(groceryEntry.amount))
 
-            SpacerHorizontalXS()
+            SpacerHorizontalXXS()
             Fliesstext(name = viewModel.unitDisplayName(groceryEntry.unit))
         }
     }
-
 }
 
+private fun shortDoubleString(double: Double): String = if (double - double.toInt() == 0.0) {
+    double.toInt().toString()
+} else {
+    double.toString()
+}
 
 @Composable
 fun BoughtCheckbox() {

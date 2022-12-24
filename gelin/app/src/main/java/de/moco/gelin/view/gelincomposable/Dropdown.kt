@@ -14,7 +14,11 @@ import androidx.compose.ui.unit.sp
 
 // TODO: change UI of dropdown menu
 @Composable
-inline fun <reified T: Enum<T>> EnumDropdown(defaultText: String, modifier: Modifier = Modifier): MutableState<T> {
+inline fun <reified T: Enum<T>> EnumDropdown(
+    defaultText: String,
+    crossinline mapToString: (T) -> String = { capitalizedEnumName(it) },
+    modifier: Modifier = Modifier
+): MutableState<T> {
     var expanded by remember { mutableStateOf(false) }
     var currentText by remember { mutableStateOf(defaultText) }
     val enumState = remember { mutableStateOf(enumValues<T>().first()) }
@@ -28,18 +32,19 @@ inline fun <reified T: Enum<T>> EnumDropdown(defaultText: String, modifier: Modi
             modifier = Modifier.fillMaxWidth()
         ) {
             for (element in enumValues<T>()) {
-                val capitalizedName = element.name
-                    .lowercase()
-                    .replaceFirstChar { it.uppercase() }
+                val displayedName = mapToString(element)
 
                 DropdownMenuItem(onClick = {
                     enumState.value = element
                     expanded = false
-                    currentText = capitalizedName
-                }) { Text(capitalizedName) }
+                    currentText = displayedName
+                }) { Text(displayedName) }
             }
         }
     }
 
     return enumState
 }
+
+inline fun <reified T: Enum<T>> capitalizedEnumName(enumValue: T): String =
+    enumValue.name.lowercase().replaceFirstChar { it.uppercase() }
