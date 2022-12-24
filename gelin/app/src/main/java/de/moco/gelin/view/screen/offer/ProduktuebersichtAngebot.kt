@@ -40,7 +40,7 @@ fun OfferListView() {
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(10.dp)
-                .border(width = 1.dp, color = Color(R.color.lightgray))) {
+                .border(width = 1.dp, color = Color(R.color.mediumgray))) {
             angebot.forEach {
                 items(angebot.size) { i, ->
                     Column(modifier = Modifier.padding(10.dp)) {

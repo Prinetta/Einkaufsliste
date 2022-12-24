@@ -16,7 +16,6 @@ import de.moco.gelin.model.groceryentry.MeasureUnit
 import de.moco.gelin.model.product.ProductCategory
 import kotlinx.coroutines.launch
 
-// TODO: method for obtaining measurement unit names
 class GroceryEntryViewModel(private val app: Application): AndroidViewModel(app) {
     val groceryEntryList = MutableLiveData<List<GroceryEntry>>()
 

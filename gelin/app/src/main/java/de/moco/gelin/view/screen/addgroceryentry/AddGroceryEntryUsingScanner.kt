@@ -12,6 +12,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import de.moco.gelin.R
+import de.moco.gelin.model.groceryEntryService
 import de.moco.gelin.ui.userinterface.ui.theme.brightgreen
 import de.moco.gelin.view.gelincomposable.*
 import de.moco.gelin.view.gelincomposable.dataclass.PRODUKTHINZUFUEGEN
@@ -43,7 +44,7 @@ fun AddGroceryEntryUsingScannerView(){
             )
         }
         Button(
-            onClick = { /*TODO("call to backend work manager to persist item")*/ },
+            onClick = { /*TODO: save grocery with groceryEntryService.saveGrocery(<grocery object>)*/ },
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(10.dp),
