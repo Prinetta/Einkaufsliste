@@ -30,8 +30,6 @@ import de.moco.gelin.view.gelincomposable.InputFieldWithPrompt
 import de.moco.gelin.view.gelincomposable.SpacerVerticalS
 import de.moco.gelin.viewmodel.GroceryEntryViewModel
 
-private val groceryEntryService = GroceryEntryService()
-
 // TODO: suggest product with auto completion
 // GroceryEntryViewModel gets autowired instead of passed from GroceryListView, not ideal but should be ok
 @Composable
@@ -68,7 +66,7 @@ fun AddGroceryEntryView(viewModel: GroceryEntryViewModel = viewModel()) {
         }
 
         Button(
-            onClick = { groceryEntryService.saveGroceryEntry(GroceryEntry(
+            onClick = { viewModel.saveGroceryEntry(GroceryEntry(
                 Product(
                     name.value.text,
                     brand.value.text.ifEmpty { null },

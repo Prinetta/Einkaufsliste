@@ -72,9 +72,11 @@ fun InputFieldMitEingabeText(name: String) {
 }
 
 @Composable
-fun InputFieldWithPrompt(modifier: Modifier = Modifier,
-                         placeholder: String,
-                         fontSize: Int = 18): MutableState<TextFieldValue> {
+fun InputFieldWithPrompt(
+    modifier: Modifier = Modifier,
+    placeholder: String,
+    fontSize: Int = 18
+): MutableState<TextFieldValue> {
     val textState = remember { mutableStateOf(TextFieldValue()) }
 
     Box(modifier.padding(10.dp)) {

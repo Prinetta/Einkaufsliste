@@ -10,13 +10,14 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
 import de.moco.gelin.R
-import de.moco.gelin.model.groceryEntryService
 import de.moco.gelin.model.groceryentry.GroceryEntry
+import de.moco.gelin.model.groceryentry.GroceryEntryService
 import de.moco.gelin.model.groceryentry.MeasureUnit
 import de.moco.gelin.model.product.ProductCategory
 import kotlinx.coroutines.launch
 
 class GroceryEntryViewModel(private val app: Application): AndroidViewModel(app) {
+    private val groceryEntryService = GroceryEntryService()
     val groceryEntryList = MutableLiveData<List<GroceryEntry>>()
 
     init {
@@ -42,6 +43,10 @@ class GroceryEntryViewModel(private val app: Application): AndroidViewModel(app)
                 throw IllegalStateException("Failed with error: ${databaseError.code}")
             }
         })
+    }
+
+    fun saveGroceryEntry(groceryEntry: GroceryEntry) = viewModelScope.launch {
+        groceryEntryService.saveGroceryEntry(groceryEntry)
     }
 
     // consider using coroutines? :(

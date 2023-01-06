@@ -42,7 +42,7 @@ fun BookkeepingItem(navController: NavHostController) {
         .fillMaxWidth()
         .clickable {
             navController.navigate(HAUSHALTSBUCH_DETAIL){
-                popUpTo(NavDrawerItem.Bookkeeping.route){ inclusive = true }
+                popUpTo(NavDrawerItem.Bookkeeping.route)
             }
         },
         elevation = 10.dp){

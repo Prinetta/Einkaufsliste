@@ -13,7 +13,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import de.moco.gelin.R
 
-// TODO: change UI of dropdown menu
 @Composable
 inline fun <reified T: Enum<T>> EnumDropdown(
     defaultText: String,
