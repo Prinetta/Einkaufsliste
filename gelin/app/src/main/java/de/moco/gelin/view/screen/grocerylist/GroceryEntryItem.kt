@@ -44,7 +44,7 @@ fun GroceryEntryItem(groceryEntry: GroceryEntry, categoryColor: Color, viewModel
             if (checked) { // unchecking does not work on purpose
                 LaunchedEffect(Unit) {
                     visible = false
-                    delay(0.7.seconds)
+                    delay(0.3.seconds) // for some reason only works if delay is low enough
                     viewModel.deleteGroceryEntry(groceryEntry)
                 }
             }
