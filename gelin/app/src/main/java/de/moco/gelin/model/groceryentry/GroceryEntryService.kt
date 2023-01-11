@@ -11,6 +11,10 @@ class GroceryEntryService {
         .child(groceryEntry.product.name)
         .setValue(groceryEntry)
 
+    fun deleteGroceryEntry(groceryEntry: GroceryEntry) = groceryEntriesRef
+        .child(groceryEntry.product.name)
+        .removeValue()
+
     fun addValueEventListener(listener: ValueEventListener) =
         groceryEntriesRef.addValueEventListener(listener)
 }

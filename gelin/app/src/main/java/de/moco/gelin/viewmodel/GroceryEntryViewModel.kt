@@ -49,6 +49,10 @@ class GroceryEntryViewModel(private val app: Application): AndroidViewModel(app)
         groceryEntryService.saveGroceryEntry(groceryEntry)
     }
 
+    fun deleteGroceryEntry(groceryEntry: GroceryEntry) = viewModelScope.launch {
+        groceryEntryService.deleteGroceryEntry(groceryEntry)
+    }
+
     // consider using coroutines? :(
     fun categoryTitle(category: ProductCategory): String = app.resources.getString(when (category) {
         ProductCategory.PRODUCE -> R.string.produce
